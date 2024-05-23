@@ -20,11 +20,17 @@ function Header() {
                 </a>
             </nav>
 
-            <img src={logo} alt="Logo de : Où sont passées les artistes femmes" />
+            <img className="header-title" src={logo} alt="Logo de : Où sont passées les artistes femmes" width={600}/>
 
-            <h1>Menez l'enquête pour retrouver quelle femme a été effacée de l'histoire de l'art !</h1>
-            <a href="#">Acheter le jeu</a>
-            <img src={box} alt="Boîte du jeu" />
+            <div className="header-intro">
+                <div className="header-intro__text">
+                    <h1><strong>Menez l'enquête</strong> pour retrouver quelle femme a été effacée de l'histoire de l'art !</h1>
+                    <a className="buy-button" href="#">Acheter le jeu</a>
+                </div>
+                
+                <img className="header-intro__img" src={box} alt="Boîte du jeu" />
+            </div>
+
         </header>
     );
 }

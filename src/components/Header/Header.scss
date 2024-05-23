@@ -1,6 +1,19 @@
+@use "../../styles/variables" as v;
+
 .header {
+    padding-bottom: 12rem;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: v.$light-pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
     &-nav {
-        padding: 2.2rem 3.2rem;
+        width: 95%;
+        position: absolute;
+        padding: 2.2rem 0rem;
 
         &__menu-link {
             float: left;
@@ -13,6 +26,43 @@
         &__basket-link {
             float: right;
             margin-left: 1rem;
+        }
+    }
+
+    &-title {
+        margin-top: 10rem;
+    }
+
+    h1 {
+        font-weight: 500;
+        color: v.$light-purple;
+    }
+
+    &-intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 50rem;
+
+            .buy-button {
+                align-self: start;
+                padding: 0.5rem 1.8rem;
+                border-radius: 10rem;
+                font-size: 3.052rem;
+                text-decoration: none;
+                color: v.$light-pink;
+                background-color: v.$light-purple;
+            }
+        }
+    
+        &__img {
+            width: 55rem;
+            margin-right: -30px;
         }
     }
 
