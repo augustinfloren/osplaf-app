@@ -1,0 +1,19 @@
+.header {
+    &-nav {
+        padding: 2.2rem 3.2rem;
+
+        &__menu-link {
+            float: left;
+        }
+
+        &__account-link {
+            float: right;
+        }
+
+        &__basket-link {
+            float: right;
+            margin-left: 1rem;
+        }
+    }
+
+}
