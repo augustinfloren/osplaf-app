@@ -6,7 +6,11 @@ html {
 }
 
 h1 {
-    font-size: 3.815rem;
+    font-size: clamp(3.157rem, 2.82944rem + 0.862vw, 4.209rem);
+}
+
+.btn {
+    font-size: clamp(2.369rem, 2.12352rem + 0.646vw, 3.157rem);
 }
 
 h2 {
@@ -35,4 +39,25 @@ p {
 
 small {
     font-size: 0.8rem;
+}
+
+@media screen and (max-width: 2000px) {
+    .hero {
+        padding-left: v.$pad-l;
+        padding-right: v.$pad-l;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .hero {
+        padding-left: v.$pad-m;
+        padding-right: v.$pad-m;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .hero {
+        padding-left: v.$pad-s;
+        padding-right: v.$pad-s;
+    }
 }
