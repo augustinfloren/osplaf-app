@@ -11,12 +11,11 @@ h1 {
 }
 
 .btn {
-    font-weight: 500;
     font-size: clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
 }
 
 h2 {
-    font-size: 3.052rem;
+    font-size: clamp(4.209rem, 3.77276rem + 1.148vw, 5.61rem);
 }
 
 h3 {
@@ -28,7 +27,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1.563rem;
+    font-size: clamp(1.44rem, 1.35906rem + 0.213vw, 1.7rem);
 }
 
 h6 {
@@ -36,7 +35,7 @@ h6 {
 }
 
 p {
-    font-size: 1rem;
+    font-size: clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
 }
 
 small {
@@ -50,6 +49,18 @@ small {
         padding-left: v.$pad-l;
         padding-right: v.$pad-l;
     }
+
+    .arrow1 {
+        right: calc(v.$pad-l + 20rem);
+    }
+}
+
+@media screen and (min-width: 1697px) {
+    .lejeu {
+        .artists_container {
+            justify-content: center;
+        }
+    }
 }
 
 @media screen and (max-width: 1800px) {
@@ -57,9 +68,14 @@ small {
         padding-left: clamp(1rem, 15vw, 14rem);
         padding-right: clamp(1rem, 15vw, 14rem);
     }
+
+    .arrow1 {
+        right: clamp(1rem, 15vw + 20rem, 14rem);
+    }
 }
 
 @media screen and (max-width: 900px) {
+
     .header-title {
         margin-top: 13rem;
     }
@@ -70,6 +86,7 @@ small {
         align-items: normal;
         gap: 3rem;
         padding-top: 15rem;
+        padding-bottom: 15rem;
         height: auto;
         min-height: 100vh;
 
@@ -83,6 +100,16 @@ small {
             min-width: 30vw;
         }
         
+    }
+
+    .lejeu {
+        &-content__intro {
+            width: 100%;
+        }
+
+        .artists_container {
+            justify-content: center;
+        }
     }
 }
 

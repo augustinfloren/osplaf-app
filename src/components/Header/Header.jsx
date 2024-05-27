@@ -1,8 +1,10 @@
-import './Header.scss'
-import menu from '../../assets/osplaf-burger.png'
-import account from '../../assets/osplaf-account.png'
-import basket from '../../assets/osplaf-basket.png'
-import logo from '../../assets/osplaf-logo1.png'
+import "./Header.scss"
+import {
+    menu,
+    account,
+    basket,
+    logo
+}   from '../../assets/index.js'
 
 function Header() {
     return (

@@ -8,6 +8,8 @@ h3 {font-size: clamp(2.369rem, 2.12352rem + 0.646vw, 3.157rem);}
 
 h4 {font-size: clamp(2rem, 8.39882rem + -16.839vw, 8rem);}
 
-p {font-size: clamp(1rem, 1rem + 0vw, 1rem);}
+h5 clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
 
-button {font-size: clamp(1.777rem, 1.5927rem + 0.485vw, 2.369rem);}
+p clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
+
+button clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);

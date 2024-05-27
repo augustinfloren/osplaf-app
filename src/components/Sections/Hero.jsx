@@ -1,5 +1,5 @@
 import './Hero.scss'
-import box from '../../assets/osplaf-box.png'
+import box from '../../assets/game-content/osplaf-box.png'
 
 function Hero() {
     return (
