@@ -54,15 +54,8 @@ small {
 
 @media screen and (max-width: 1800px) {
     .hero {
-        padding-left: v.$pad-m;
-        padding-right: v.$pad-m;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .hero {
-        padding-left: v.$pad-s;
-        padding-right: v.$pad-s;
+        padding-left: clamp(1rem, 15vw, 14rem);
+        padding-right: clamp(1rem, 15vw, 14rem);
     }
 }
 
@@ -73,7 +66,9 @@ small {
 
     .hero {
         flex-direction: column;
+        justify-content: space-around;
         align-items: normal;
+        gap: 3rem;
         padding-top: 15rem;
         height: auto;
         min-height: 100vh;
@@ -85,7 +80,6 @@ small {
         &__img {
             margin-top: 0rem;
             margin-right: 0;
-            margin-top: -5rem;
             min-width: 30vw;
         }
         
