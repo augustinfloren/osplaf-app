@@ -9,7 +9,9 @@ function Hero() {
                 <a className="buy-button btn" href="#">Acheter le jeu</a>
             </div>
             
-            <img className="hero__img" src={box} alt="Boîte du jeu" />
+            <div className="hero__img">
+                <img src={box} alt="Boîte du jeu" />
+            </div>
         </section>
     )
 }

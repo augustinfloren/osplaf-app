@@ -19,7 +19,7 @@ function Header() {
                 </a>
             </nav>
 
-            <img className="header-title" src={logo} alt="Logo de : Où sont passées les artistes femmes" width={600}/>
+            <img className="header-title" src={logo} alt="Logo de : Où sont passées les artistes femmes"/>
         </header>
     );
 }

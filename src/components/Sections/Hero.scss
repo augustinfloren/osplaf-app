@@ -5,9 +5,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 8rem;
     height: 100vh;
-    padding: 30rem v.$pad 12rem v.$pad;
+    padding: 0rem v.$pad 0rem v.$pad;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
     background-color: v.$light-pink;
@@ -20,12 +20,13 @@
     &__text {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        max-width: 50rem;
+        gap: 3.5rem;
+        max-width: 46rem;
+        margin-top: 10vh;
 
         .buy-button {
             align-self: start;
-            padding: 0.5rem 1.8rem;
+            padding: 1.5rem 3.8rem;
             border-radius: 10rem;
             text-decoration: none;
             color: v.$light-pink;
@@ -34,10 +35,15 @@
     }
 
     &__img {
-        // width: 62rem;
-        max-width: 62rem;
         min-width: 50rem;
         margin-right: -5rem;
+        margin-top: 15vh;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
     }
 }
 

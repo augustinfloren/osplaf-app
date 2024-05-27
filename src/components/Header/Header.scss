@@ -7,25 +7,35 @@
         position: absolute;
         width: 100%;
         padding: 2.2rem 2.5rem;
-
         &__menu-link {
             float: left;
+            img {
+                height: clamp(2.5rem, 5vw, 3.2rem);
+            }
         }
 
         &__account-link {
             float: right;
+            img {
+                height: clamp(2.5rem, 5vw, 4rem);
+            }
         }
 
         &__basket-link {
             float: right;
             margin-left: 1rem;
+            img {
+                height: clamp(2.5rem, 5vw, 4rem);
+            }
         }
+        
     }
 
     &-title {
         position: absolute;
+        width: clamp(35rem, 40vw, 60rem);
         top: 50%; left: 50%;
         transform: translate(-50%, -50%); 
-        margin-top: 15rem;
+        margin-top: 10rem;
     }
 }
