@@ -6,8 +6,8 @@
     align-items: flex-start;
     gap: calc(v.$title-lh * 4);
     position: relative;
-    padding: calc(v.$title-lh * 4) v.$pad v.$vertical-pad v.$pad;
-
+    overflow: hidden;
+    padding: calc(v.$title-lh * 4) 0 v.$vertical-pad 0;
     color: v.$light-pink;
     background-color: v.$dark-purple;
 
@@ -22,8 +22,9 @@
         display: flex;
         flex-direction: column;
         gap: v.$title-lh;
+        width: clamp(70%, 70vw, 55%);
         text-align: right;
-        width: 55%;
+        padding: 0 v.$pad 0 v.$pad;
         align-self: flex-end;
     }
 
@@ -31,6 +32,7 @@
         display: flex;
         flex-direction: column;
         gap: calc(v.$title-lh * 2);
+        padding: 0 v.$pad 0 v.$pad;
 
         h3 {
             font-weight: 400;
@@ -40,7 +42,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between; 
-            gap: 5% 10%;
+            gap: 5rem 10rem;
     
             .artist {
                 display: flex;
@@ -73,6 +75,48 @@
                     }
                 }
             }
+        }
+    }
+
+    &-content__presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .arrow2 {
+            position: absolute;
+            width: 18rem;
+
+            left: -3vw;
+            margin-top: -7rem;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: v.$title-lh;
+            width: 97%;
+            padding: calc(v.$title-lh * 3) 32vw calc(v.$title-lh * 3) v.$box-pad;
+            border-radius: v.$box-radius;
+
+            background-color: v.$light-pink;
+            color: v.$light-purple;
+        }
+
+        &__img {
+            position: absolute;
+            right: 3vw;
+            margin-right: - v.$pad;
+            margin-top: -5rem;
+            width: clamp(40rem, 50vw, 55rem);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+
         }
     }
 

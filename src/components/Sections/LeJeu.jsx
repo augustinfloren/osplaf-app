@@ -1,6 +1,8 @@
 import './LeJeu.scss'
 import arrow1 from '../../assets/icons/osplaf-arrow1.png'
 import artists from '../../assets/index'
+import arrow2 from '../../assets/icons/osplaf-arrow2.png'
+import cards from '../../assets/game-content/osplaf-cartes.png'
 
 function LeJeu() {
     return (
@@ -23,6 +25,25 @@ function LeJeu() {
                             </div>
                         </div>
                     ))} 
+                </div>
+            </div>
+            <div className="lejeu-content__presentation">
+                <img src={arrow2} alt="flèche" className='arrow2'/>
+                <div className="lejeu-content__presentation__text">
+                    <h3>Dans ce jeu, vous incarnez une artiste femme qui mène l’enquête afin de découvrir la peintresse* qui a disparu de l’histoire de l’art. 
+                    </h3>
+                    <p>
+                    Au cours de la partie, vous devrez récupérer les indices des autres artistes femmes incarnées dans le jeu, et ainsi en apprendre davantage sur leur vie, leur œuvre et leur époque. Vous pourrez être censurée, mais aussi choisir de vous révolter ou de faire preuve de sororité. 
+                    </p>
+                    <p>
+                    En plus de votre activité d’artiste, vous pouvez devenir directrice d’un atelier d’artistes femmes, présidente d’une association de lutte pour les droits des femmes, ou encore rédactrice en chef d’un journal féministe. 
+                    </p>
+                    <p>
+                    *féminin de «peintre», utilisé jusqu’au XVIIe siècle. 
+                    </p>
+                </div>
+                <div className="lejeu-content__presentation__img">
+                    <img src={cards} alt="Main tenant des cartes" />
                 </div>
             </div>
         </section>

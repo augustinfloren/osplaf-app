@@ -10,9 +10,10 @@
         justify-content: space-between;
         gap: 8rem;
         height: 100vh;
-        padding: 0rem v.$pad 0rem v.$pad;
-        border-bottom-left-radius: 100px;
-        border-bottom-right-radius: 100px;
+        // padding: 0rem clamp(1rem, 15vw, 14rem);
+        padding: 0rem v.$pad;
+        border-bottom-left-radius: v.$box-radius;
+        border-bottom-right-radius: v.$box-radius;
         background-color: v.$light-pink;
         
         h1 {

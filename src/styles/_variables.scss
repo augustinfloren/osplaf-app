@@ -4,7 +4,7 @@ $medium-purple: #5637BF;
 $dark-purple: #2C2054;
 $purple-gradient: linear-gradient(7,5deg, #610094, #A36BC1);
 
-$pad-l: 20vw; 
+$pad-l: 15vw; 
 $pad-m: 15vw; 
 $pad: 10vw;
 $pad-s: 8vw; 
@@ -13,3 +13,8 @@ $pad-xs: 5rem;
 $vertical-pad: 15rem;
 
 $title-lh: 2.2rem;
+
+$box-pad: calc($pad - 1.5%);
+$box-pad-l: calc($pad-l - 1.5%);
+
+$box-radius: 100px;
