@@ -1,0 +1,128 @@
+@use "../../styles/variables" as v;
+
+.lejeu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(v.$title-lh * 4);
+    position: relative;
+    overflow: hidden;
+    padding: calc(v.$title-lh * 4) 0 v.$vertical-pad 0;
+    color: v.$light-pink;
+    background-color: v.$dark-purple;
+
+    .arrow1 {
+        position: absolute;
+        width: 13rem;
+        right: calc(v.$pad + 20rem);
+        top: 2rem;
+    }
+
+    &-content__intro {
+        display: flex;
+        flex-direction: column;
+        gap: v.$title-lh;
+        width: clamp(70%, 70vw, 55%);
+        text-align: right;
+        padding: 0 v.$pad 0 v.$pad;
+        align-self: flex-end;
+    }
+
+    &-content__artists {
+        display: flex;
+        flex-direction: column;
+        gap: calc(v.$title-lh * 2);
+        padding: 0 v.$pad 0 v.$pad;
+
+        h3 {
+            font-weight: 400;
+        }
+
+        .artists_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; 
+            gap: 5rem 10rem;
+    
+            .artist {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+    
+                flex: 0 0 23.3333%;
+                width: clamp(20rem, 20vw, 25rem);
+
+                img {
+                    mix-blend-mode: plus-lighter;
+                }
+    
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                    h5, p {
+                        text-align: center;
+                    }
+    
+                    h5 {
+                        font-weight: 600;
+                    }
+    
+                    p {
+                        font-weight: 200;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content__presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .arrow2 {
+            position: absolute;
+            width: 18rem;
+
+            left: -3vw;
+            margin-top: -7rem;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            gap: v.$title-lh;
+            width: 97%;
+            padding: calc(v.$title-lh * 3) 32vw calc(v.$title-lh * 3) v.$box-pad;
+            border-radius: v.$box-radius;
+
+            background-color: v.$light-pink;
+            color: v.$light-purple;
+        }
+
+        &__img {
+            position: absolute;
+            right: 3vw;
+            margin-right: - v.$pad;
+            margin-top: -5rem;
+            width: clamp(40rem, 50vw, 55rem);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+
+        }
+    }
+
+    
+
+}
+
+
+
