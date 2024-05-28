@@ -19,7 +19,7 @@ h2 {
 }
 
 h3 {
-    font-size: 2.441rem;
+    font-size: clamp(2.369rem, 2.12352rem + 0.646vw, 3.157rem);
 }
 
 h4 {
@@ -27,7 +27,7 @@ h4 {
 }
 
 h5 {
-    font-size: clamp(1.44rem, 1.35906rem + 0.213vw, 1.7rem);
+    font-size: clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
 }
 
 h6 {
@@ -45,7 +45,7 @@ small {
 // Width
 
 @media screen and (max-width: 2500px) {
-    .hero {
+    .hero-content {
         padding-left: v.$pad-l;
         padding-right: v.$pad-l;
     }
@@ -55,16 +55,8 @@ small {
     }
 }
 
-@media screen and (min-width: 1697px) {
-    .lejeu {
-        .artists_container {
-            justify-content: center;
-        }
-    }
-}
-
 @media screen and (max-width: 1800px) {
-    .hero {
+    .hero-content {
         padding-left: clamp(1rem, 15vw, 14rem);
         padding-right: clamp(1rem, 15vw, 14rem);
     }
@@ -80,7 +72,7 @@ small {
         margin-top: 13rem;
     }
 
-    .hero {
+    .hero-content {
         flex-direction: column;
         justify-content: space-around;
         align-items: normal;
@@ -109,6 +101,20 @@ small {
 
         .artists_container {
             justify-content: center;
+
+            .artist {
+                flex: 0 0 40%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .lejeu {
+        .artists_container {
+            .artist {
+                flex: 0 0 70%;
+            }
         }
     }
 }

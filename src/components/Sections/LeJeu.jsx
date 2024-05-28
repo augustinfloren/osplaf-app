@@ -17,8 +17,10 @@ function LeJeu() {
                     {artists.map((artist) => (
                         <div key={artist.name} className="artist">
                             <img src={artist.src} alt={`Portrait de ${artist.name}`} />
-                            <h5>{artist.name}</h5>
-                            <p>{artist.date}</p>
+                            <div className="artist__text">
+                                <h5>{artist.name}</h5>
+                                <p>{artist.date}</p>
+                            </div>
                         </div>
                     ))} 
                 </div>
