@@ -1,4 +1,5 @@
 @use "../../styles/variables" as v;
+@import "../../styles/mixins";
 
 .header {
     position: relative;
@@ -37,5 +38,14 @@
         top: 50%; left: 50%;
         transform: translate(-50%, -50%); 
         margin-top: 10rem;
+
+        @include respond-to(medium) {
+            margin-top: 13rem;
+        }
+
+        @include respond-to(small-height) {
+            margin-top: 15vh;
+        }
+
     }
 }

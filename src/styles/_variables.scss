@@ -1,9 +1,11 @@
+// Colors
 $light-pink: #FFE5E5;  
 $light-purple: #5637BF;
 $medium-purple: #5637BF;
 $dark-purple: #2C2054;
-$purple-gradient: linear-gradient(7,5deg, #610094, #A36BC1);
+$purple-gradient: linear-gradient(90deg, rgba(96,0,148,0.4) 0%, rgba(163,107,193,0.4) 100%);
 
+// Spacings
 $pad-l: 15vw; 
 $pad-m: 15vw; 
 $pad: 10vw;
@@ -16,5 +18,9 @@ $title-lh: 2.2rem;
 
 $box-pad: calc($pad - 1.5%);
 $box-pad-l: calc($pad-l - 1.5%);
-
 $box-radius: 100px;
+
+// Breakpoints
+$breakpoint-small: 650px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1500px;

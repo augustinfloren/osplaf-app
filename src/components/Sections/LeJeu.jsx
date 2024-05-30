@@ -1,8 +1,10 @@
-import './LeJeu.scss'
-import arrow1 from '../../assets/icons/osplaf-arrow1.png'
+import './LeJeu.scss';
+import arrow1 from '../../assets/icons/osplaf-arrow1.png';
+import arrow2 from '../../assets/icons/osplaf-arrow2.png';
+import cards from '../../assets/game-content/osplaf-cartes.png';
 import artists from '../../assets/index'
-import arrow2 from '../../assets/icons/osplaf-arrow2.png'
-import cards from '../../assets/game-content/osplaf-cartes.png'
+
+import ContentSlider from '../Sliders/ContentSlider';
 
 function LeJeu() {
     return (
@@ -15,7 +17,7 @@ function LeJeu() {
             </div>
             <div className="lejeu-content__artists">
                 <h3>Elles s'appelaient...</h3>
-                <div className='artists_container'>
+                <div className='artists__container'>
                     {artists.map((artist) => (
                         <div key={artist.name} className="artist">
                             <img src={artist.src} alt={`Portrait de ${artist.name}`} />
@@ -46,8 +48,11 @@ function LeJeu() {
                     <img src={cards} alt="Main tenant des cartes" />
                 </div>
             </div>
+
+            <ContentSlider />
+            
         </section>
-    )
+    );
 }
 
 export default LeJeu;
