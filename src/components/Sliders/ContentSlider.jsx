@@ -38,13 +38,12 @@ const images = [
   
 function ContentSlider() {
   const swiperRef = useRef(null);
-
+  
   useEffect(() => {
     const swiperEl = swiperRef.current;
-    const swiper = swiperEl.swiper;
 
-    const handlePrev = () => swiper.slidePrev();
-    const handleNext = () => swiper.slideNext();
+    const handlePrev = () => swiperEl.swiper.slidePrev();
+    const handleNext = () => swiperEl.swiper.slideNext();
 
     document.querySelector('.swiper-button-prev').addEventListener('click', handlePrev);
     document.querySelector('.swiper-button-next').addEventListener('click', handleNext);
@@ -59,15 +58,27 @@ function ContentSlider() {
     <div className='content-slider'>
       <swiper-container
         ref={swiperRef}
+        slidesPerView="1"
         navigation="false"
-        slides-per-view="2.2"
         centered-slides="true"
         loop="true"
+        breakpoints = {
+          JSON.stringify({
+              650:{
+                  slidesPerView: 2.2,
+                  spaceBetween: 0
+              },
+              1500:{
+                  slidesPerView: 2.2,
+                  spaceBetween: 150
+              }
+          })
+        }
       >
         {images.map((image, index) => (
-          <swiper-slide key={index} >
+          <swiper-slide key={index}>
             <div className='img-container'>
-              <img src={image.url} alt={image.name} loading="lazy" id={image.id}/>
+              <img src={image.url} alt={image.name} loading="lazy" id={image.id} />
             </div>
           </swiper-slide>
         ))}

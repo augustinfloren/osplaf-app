@@ -1,19 +1,21 @@
 @use "../../styles/variables" as v;
+@import "../../styles/mixins";
 
 .content-slider {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100vw;
+    margin-top: 3vw;
 
     swiper-container {
         width: 100%;
         height: 30vw;
 
         swiper-slide {
-
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 3vw;
 
             border: 0.35vw solid v.$light-pink;
             border-radius: 10vw;
@@ -50,10 +52,27 @@
                 width: 90%;
                 object-fit: cover;
                 
-                border-radius: 85px;
+                border-radius: 9.5vw;
+
+                @include respond-to(large) {
+                    border-radius: 6.5vw;
+                }
+            }
+
+            @include respond-to(large) {
+                border-radius: 7.5vw;
             }
         }
 
+        @include respond-to(large) {
+            width: 95%;
+            height: 25vw;
+        }
+
+        @include respond-to(small) {
+            width: 80%;
+            height: 65vw;
+        }
 
     }
 
@@ -77,23 +96,35 @@
     .swiper-button-prev,
     .swiper-button-next {
         position: absolute;
-        top: 60%;
-        transform: translateY(-60%);
+        top: 50%;
+        transform: translateY(-50%);
         cursor: pointer;
         z-index: 10;
 
         img {
             transition: transform 0.05s ease-in;
             width: 6vw;
+
+            @include respond-to(small) {
+                width: 10vw;
+            }
         }
     }
 
     .swiper-button-prev {
         left: 20vw;
+
+        @include respond-to(small) {
+            left: 7vw;
+        }
     }
 
     .swiper-button-next {
         right: 20vw;
+
+        @include respond-to(small) {
+            right: 7vw;
+        }
     }
 
     .swiper-button-prev:hover, 
