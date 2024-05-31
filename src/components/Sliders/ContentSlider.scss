@@ -1,6 +1,7 @@
 @use "../../styles/variables" as v;
 
 .content-slider {
+    position: relative;
     width: 100vw;
 
     swiper-container {
@@ -14,7 +15,7 @@
             align-items: center;
             margin-top: 3vw;
 
-            border: 0.35vw solid white;
+            border: 0.35vw solid v.$light-pink;
             border-radius: 10vw;
             overflow: hidden;
 
@@ -34,8 +35,9 @@
                 top: 0;
                 bottom: 0;
                 margin: 3%;
+                overflow: hidden;
 
-                border-radius: 10vw;
+                border-radius: 9.5vw;
 
                 background: v.$purple-gradient;
 
@@ -52,10 +54,11 @@
             }
         }
 
-        .swiper-button-next {
-            width: 10rem;
-            background-color: aqua;
-        }
+
+    }
+
+    #slide1-4 {
+        width: 80%;
     }
 
     .swiper-slide-active {
@@ -71,10 +74,32 @@
         overflow: visible;
     }
 
-    // swiper-container::part(button-prev) {
-    //     background: url('../../assets/icons/slider-nav-arrow.png') !important;
-    //     width: 9rem;
-        // background-color: red;
-    // }
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-60%);
+        cursor: pointer;
+        z-index: 10;
+
+        img {
+            transition: transform 0.05s ease-in;
+            width: 6vw;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 20vw;
+    }
+
+    .swiper-button-next {
+        right: 20vw;
+    }
+
+    .swiper-button-prev:hover, 
+    .swiper-button-next:hover {
+        img {
+            transform: scale(1.3);
+        }
+    }
 }
-  

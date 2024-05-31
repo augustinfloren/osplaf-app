@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './ContentSlider.scss';
+import sliderNavLeft from '../../assets/icons/slider-nav-arrow-left.png';
+import sliderNavRight from '../../assets/icons/slider-nav-arrow-right.png';
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -13,46 +15,69 @@ import image4 from '../../assets/game-content/osplaf-cartes3.png';
 
 const images = [
   {
+    id: "slide1-1",
     name: "Mise en situation du jeu",
     url: image1
   },
   {
+    id: "slide1-2",
     name: "Contenu du jeu",
     url: image2
   },
   {
+    id: "slide1-3",
     name: "Livret du jeu",
     url: image3
   },
   {
+    id: "slide1-4",
     name: "Ensemble des cartes du jeu",
     url: image4
   }
 ];
   
 function ContentSlider() {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    const swiperEl = swiperRef.current;
+    const swiper = swiperEl.swiper;
+
+    const handlePrev = () => swiper.slidePrev();
+    const handleNext = () => swiper.slideNext();
+
+    document.querySelector('.swiper-button-prev').addEventListener('click', handlePrev);
+    document.querySelector('.swiper-button-next').addEventListener('click', handleNext);
+
+    return () => {
+      document.querySelector('.swiper-button-prev').removeEventListener('click', handlePrev);
+      document.querySelector('.swiper-button-next').removeEventListener('click', handleNext);
+    };
+  }, []);
+
   return (
     <div className='content-slider'>
       <swiper-container
+        ref={swiperRef}
+        navigation="false"
         slides-per-view="2.2"
         centered-slides="true"
-        navigation="true"
         loop="true"
-        navigation-prevEl=".swiper-button-prev"
-        navigation-nextEl=".swiper-button-next"
       >
         {images.map((image, index) => (
           <swiper-slide key={index} >
-
             <div className='img-container'>
-              <img src={image.url} alt={image.name} loading="lazy"/>
+              <img src={image.url} alt={image.name} loading="lazy" id={image.id}/>
             </div>
           </swiper-slide>
         ))}
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </swiper-container>
+      <div className="swiper-button-prev">
+        <img src={sliderNavLeft} alt="Previous" />
+      </div>
+      <div className="swiper-button-next">
+        <img src={sliderNavRight} alt="Next" />
+      </div>
     </div>
   );
 }
