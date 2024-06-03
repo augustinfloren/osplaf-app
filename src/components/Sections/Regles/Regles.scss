@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as v;
+
+.regles__content {
+    &__dropdown {
+        cursor: pointer;
+
+        width: 6vw;
+
+        transform: rotate(180deg);
+        transition: transform 0.1s ease-in;
+
+        &.open{
+            transform: rotate(0deg);
+        }
+    }
+
+    &__steps {
+        display: none;
+
+        &.open {
+            display: flex;
+        }
+    }
+
+}
+
+
