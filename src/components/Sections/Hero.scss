@@ -13,8 +13,7 @@
         height: 100vh;
 
         padding: 0rem v.$pad;
-        border-bottom-left-radius: v.$box-radius;
-        border-bottom-right-radius: v.$box-radius;
+        @include border-radius(v.$box-radius);
 
         background-color: v.$light-pink;
         

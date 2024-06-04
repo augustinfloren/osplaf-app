@@ -36,16 +36,20 @@ const rules = [
 function Regles() {
     return (
         <section className='regles'>
-            <div className='regles__title'>
-                <h2>Règles du jeu</h2>
-                <p>• Le jeu est prévu pour 3 à 5 joueur·euses à partir de 13 ans.</p>
+            <div className="regles__content">
+                <div className='regles__content__title'>
+                    <h2>Règles du jeu</h2>
+                    <p>• Le jeu est prévu pour 3 à 5 joueur·euses à partir de 13 ans.</p>
+                </div>
+                
+                <div className="regles__content__phase-container">
+                {rules.map((rule) => (
+                    <Dropdown content={rule} key={rule.name}/>
+                ))}
+                </div>
+                
+                <a className="regles__content__download" href='#'>Télécharger les fiches enquêtes</a>
             </div>
-            
-            {rules.map((rule) => (
-                <Dropdown content={rule} key={rule.name}/>
-            ))}
-            
-            <a className="regles__download" href='#'>Télécharger les fiches enquêtes</a>
         </section>
     );
 }
