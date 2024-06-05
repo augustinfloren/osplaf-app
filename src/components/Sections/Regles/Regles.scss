@@ -33,19 +33,19 @@
         }
 
         &__phase {
+            transition: height ease 0.3s;
+            overflow: hidden;
+            
             display: flex;
             flex-direction: column;
             gap: v.$title-lh;
             width: 97%;
             padding: 3vw v.$box-pad 3vw v.$box-pad;
-            border-radius: v.$box-radius;
 
             background-color: v.$light-pink;
             color: v.$light-purple;
 
-            &.open {
-                border-radius: clamp(30px , 10vw, 70px)
-            }
+            border-radius: clamp(30px , 10vw, 70px);
 
             &-title {
                 display: flex;
@@ -53,72 +53,73 @@
                 align-items: center;
 
                 &__dropdown {
+                    // transform: rotate(180deg); INITIAL ROTATE
+                    // transition: transform 0.1s ease-in; TRANSITION
+
                     cursor: pointer;
             
                     width: clamp(2rem, 5vw, 5rem);
-            
-                    transform: rotate(180deg);
-                    transition: transform 0.1s ease-in;
-            
-                    &.open{
-                        transform: rotate(0deg);
-                    }
+
+                    transform: rotate(0deg);
                 }
             }
 
         
             &-steps {
-                display: none;
-        
-                &.open {
-                    position: relative;
+                
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                gap: 1vw;
+
+                opacity: 0;
+                transition: opacity 0.5s ease;
+
+                &.show {
+                    opacity: 1;
+                }
+
+                .description-list {
                     display: flex;
-                    flex-direction: column;
-                    gap: 1vw;
+                    align-items: center;
 
-                    .description-list {
+                    .number {
+                        width: max(6vw, 5rem);
+                        height: max(6vw, 5rem);
+                        position: absolute;
                         display: flex;
+                        justify-content: center;
                         align-items: center;
-
-                        .number {
-                            width: max(6vw, 5rem);
-                            height: max(6vw, 5rem);
-                            position: absolute;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            left: min(-3vw, -25px);
-                            
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                        }
-                    }
-
-
-                    & > * {
-                        border-radius: clamp(30px , 3vw, 40px);
-                        padding: max(3vw, 2rem) min(7vw, 7rem);
-                    }
-
-                    & > *:nth-child(odd) {
-                        background-color: v.$light-purple;
-                        color: v.$light-pink;
-
-                        .number {
-                            background-image: url("../../../assets/icons/starburst-odd.png");
-                        }
-                    }
-
-                    & > *:nth-child(even) {
-                            border: max(0.5vw, 5px) solid v.$light-purple;
-
-                        .number {
-                            color: v.$light-purple;
-                            background-image: url("../../../assets/icons/starburst-even.png");
-                        }
+                        left: min(-3vw, -25px);
+                        
+                        background-size: contain;
+                        background-repeat: no-repeat;
                     }
                 }
-        
+
+
+                & > * {
+                    border-radius: clamp(30px , 3vw, 40px);
+                    padding: max(3vw, 2rem) min(7vw, 7rem);
+                }
+
+                & > *:nth-child(odd) {
+                    background-color: v.$light-purple;
+                    color: v.$light-pink;
+
+                    .number {
+                        background-image: url("../../../assets/icons/starburst-odd.png");
+                    }
+                }
+
+                & > *:nth-child(even) {
+                        border: max(0.5vw, 5px) solid v.$light-purple;
+
+                    .number {
+                        color: v.$light-purple;
+                        background-image: url("../../../assets/icons/starburst-even.png");
+                    }
+                }
             }
         }
     }
