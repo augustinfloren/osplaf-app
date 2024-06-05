@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './Regles.scss';
 import dropdownIcon from '../../../assets/icons/osplaf-dropdown.png';
-import "/public/images/starburst-odd.png";
 
 function Dropdown(rule) {
     const content = rule.content;

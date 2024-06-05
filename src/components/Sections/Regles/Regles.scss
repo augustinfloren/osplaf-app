@@ -81,13 +81,13 @@
                         align-items: center;
 
                         .number {
-                            width: max(6vw, 4rem);
-                            height: max(6vw, 4rem);
+                            width: max(6vw, 5rem);
+                            height: max(6vw, 5rem);
                             position: absolute;
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            left: min(-3vw, -20px);
+                            left: min(-3vw, -25px);
                             
                             background-size: contain;
                             background-repeat: no-repeat;
