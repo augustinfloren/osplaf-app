@@ -7,23 +7,31 @@ function Dropdown(rule) {
     const [open, setOpen] = useState(false);
     const contentRef = useRef(null);
 
-    const toggle = () => {
-        setOpen(!open);
+    const openPhaseContainer = (event) => {
+        if (event.target === event.currentTarget) {
+            setOpen(!open);
+        }
+    }
+
+    const openChildPhaseContainer = (event) => {
+        if (event.target === event.currentTarget) {
+            setOpen(!open);
+            event.stopPropagation();
+        }
     }
 
     return (
         <div className='regles__content__phase'
             key={`regles__content__${content.name}`}
+            onClick={openPhaseContainer}
             ref={contentRef} 
             style={open ? { height: contentRef.current.scrollHeight + "px" } : { height: "max(8vw, 6rem)" }}
         >
 
-            <div className="regles__content__phase-title">
-                <h3>{content.name}</h3>
+            <div className="regles__content__phase-title"  onClick={openChildPhaseContainer}>
+                <h3 onClick={openChildPhaseContainer} >{content.name}</h3>
 
-                <div className='regles__content__phase-title__dropdown' onClick={toggle}>
-                    <img src={dropdownIcon} alt="Menu déroulant" />
-                </div>
+                <img className={`regles__content__phase-title__dropdown ${open ? "open" : ""}`} src={dropdownIcon} alt="Menu déroulant" onClick={openChildPhaseContainer} ref={contentRef} />
             </div>
 
             <div className={`regles__content__phase-steps ${open ? "show" : ""}`} > 
