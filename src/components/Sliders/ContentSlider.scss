@@ -16,8 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            border: 0.35vw solid v.$light-pink;
+            border: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-pink;
             border-radius: 10vw;
             overflow: hidden;
 
