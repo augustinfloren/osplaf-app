@@ -3,6 +3,7 @@ import './Regles.scss';
 import dropdownIcon from '../../../assets/icons/osplaf-dropdown.png';
 
 function Dropdown(rule) {
+
     const content = rule.content;
     const [open, setOpen] = useState(false);
     const [showSteps, setShowSteps] = useState(false);
@@ -31,7 +32,7 @@ function Dropdown(rule) {
         } else {
             setShowSteps(false);
         }
-    }, [open]);
+    }, [open]); 
 
     return (
         <div className={`regles__content__phase ${open ? "open" : ""}`}
