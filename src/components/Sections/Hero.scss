@@ -13,8 +13,7 @@
         height: 100vh;
 
         padding: 0rem v.$pad;
-        border-bottom-left-radius: v.$box-radius;
-        border-bottom-right-radius: v.$box-radius;
+        @include border-radius(v.$box-radius);
 
         background-color: v.$light-pink;
         
@@ -40,8 +39,20 @@
                 padding: 1.5rem 3.8rem;
                 border-radius: 10rem;
                 text-decoration: none;
+
+                outline: none;
+
                 color: v.$light-pink;
                 background-color: v.$light-purple;
+
+                transition: all 0.1s ease;
+
+                &:hover {
+                    font-weight: 600;
+                    outline: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
+                    color: v.$light-purple;
+                    background-color: v.$light-pink;
+                }
             }
 
             @include respond-to(small-height) {

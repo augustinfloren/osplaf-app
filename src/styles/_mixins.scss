@@ -19,3 +19,12 @@
         }
     }
 }
+
+@mixin section-vertical-padding($top-pad, $bottom-pad) {
+    padding: v.$top-pad 0 v.$bottom-pad 0;
+}
+
+@mixin border-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
