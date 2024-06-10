@@ -34,14 +34,15 @@
 
         &__phase {
             cursor: pointer;
-
-            transition: height ease 0.3s;
             overflow: hidden;
             
+            height: auto;
             display: flex;
             flex-direction: column;
             gap: v.$title-lh;
             width: 97%;
+            
+            border-radius: clamp(30px , 10vw, 70px);
             padding: 2.1vw v.$box-pad 2.3vw v.$box-pad;
 
             @include respond-to(small) {
@@ -58,8 +59,13 @@
 
             background-color: v.$light-pink;
             color: v.$light-purple;
+            
+            opacity: 1;
+            transition: opacity 0.3s ease;
 
-            border-radius: clamp(30px , 10vw, 70px);
+            &.close:hover {
+                opacity: 0.5;
+            }
 
             &-title {
                 display: flex;
@@ -98,6 +104,7 @@
                 .description-list {
                     display: flex;
                     align-items: center;
+                    
 
                     .number {
                         width: max(6vw, 5rem);
