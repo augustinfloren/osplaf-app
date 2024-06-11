@@ -40,13 +40,17 @@
             height: 2vw;
             width: 2vw;
             opacity: 0.7;
+            margin-bottom: 2vw;
             background-color: v.$light-pink;
+            box-shadow: 1px 1px 20px rgba(32, 0, 38, 0.645);
         }
     
         &::part(bullet-active) {
             height: 2vw;
             width: 2vw;
+            margin-bottom: 2vw;
             background-color: v.$light-purple;
+            box-shadow: 1px 1px 20px rgba(241, 161, 255, 0.452);
         }
     }
 }

@@ -9,8 +9,11 @@
 
         &__form {
             position: relative;
-            display: flex;
-            justify-content: center;
+            // display: flex;
+            // justify-content: center;
+            // flex-direction: column;
+            // align-items: center;
+            // gap: 2.2rem;
 
             padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
 
@@ -39,10 +42,58 @@
             }
     
             h2 {
-                width: 100%;
                 display: block;
                 text-align: right;
                 color: v.$light-pink;
+            }
+
+            .contact-form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1vw;
+                
+                margin-top: 2.2rem;
+
+                input {
+                    border-radius: 100px;
+                }
+                
+                input, &__message {
+                    padding: 1.5rem 3.8rem;
+                    
+                    border: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
+                    color: v.$light-pink;
+                    background: none;
+                }
+
+                input:focus, &__message textarea:focus {
+                    outline: none;
+                }
+                
+                &__name, &__mail {
+                    flex-grow: 1;
+                }
+
+                &__objet, &__message {
+                    width: 100%;
+                }
+
+                &__message {
+                    height: 20rem;
+                    border-radius: 40px;
+
+                    & textarea {
+                        width: 100%;
+                        height: 100%;
+                        background: none;
+                        border: none;
+                        resize: none;
+
+                        color: v.$light-pink;
+                        scrollbar-color:  v.$light-purple rgba(0, 0, 255, 0);
+                        scrollbar-width: thin;
+                    }
+                }
             }
         }
     }
