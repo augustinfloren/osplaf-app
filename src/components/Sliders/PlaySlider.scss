@@ -1,0 +1,52 @@
+@use "../../styles/variables" as v;
+@import "../../styles/mixins";
+
+.play-slider {
+    padding: 0% 1.5%;
+
+    swiper-container {
+        mix-blend-mode: plus-lighter;
+
+        &::part(container) {
+            width: 100%;
+            border-radius: min(15vw, 100px);
+            height: 40vw;
+
+            @include respond-to(medium) {
+                height: 50vw;
+            }
+
+            @include respond-to(small) {
+                height: 50rem;
+            }
+        }
+
+        swiper-slide {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+            
+    
+        &::part(bullet) {
+            height: 2vw;
+            width: 2vw;
+            opacity: 0.7;
+            background-color: v.$light-pink;
+        }
+    
+        &::part(bullet-active) {
+            height: 2vw;
+            width: 2vw;
+            background-color: v.$light-purple;
+        }
+    }
+}

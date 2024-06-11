@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './ContentSlider.scss';
+import 'animate.css';
 import sliderNavLeft from '../../assets/icons/slider-nav-arrow-left.png';
 import sliderNavRight from '../../assets/icons/slider-nav-arrow-right.png';
 
@@ -76,9 +77,9 @@ function ContentSlider() {
         }
       >
         {images.map((image, index) => (
-          <swiper-slide key={index}>
+          <swiper-slide key={image.id}>
             <div className='img-container'>
-              <img src={image.url} alt={image.name} loading="lazy" id={image.id} />
+              <img src={image.url} alt={image.name} loading="lazy"/>
             </div>
           </swiper-slide>
         ))}

@@ -1,4 +1,5 @@
 import './Regles.scss';
+import 'animate.css';
 import Dropdown from './Dropdown';
 
 const rules = [

@@ -1,0 +1,49 @@
+@use "../../styles/variables" as v;
+@import "../../styles/mixins";
+
+.contact {
+    background-color: v.$dark-purple;
+
+    &-content {
+        padding: 1vw 0 v.$bottom-pad 0;
+
+        &__form {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
+
+            @include respond-to(large) {
+                padding-left: v.$pad-l;
+                padding-right: v.$pad-l;
+            }
+
+            .arrow3 {
+                position: absolute;
+                width: 11rem;
+                right: calc(v.$pad + 20rem);
+                top: 5rem;
+    
+                @include respond-to(large) {
+                    right: calc(v.$pad-l + 23rem);
+                }
+    
+                @include respond-to(medium) {
+                    width: 10rem;
+                }
+
+                @include respond-to(small) {
+                    right: calc(v.$pad + 17rem);
+                }
+            }
+    
+            h2 {
+                width: 100%;
+                display: block;
+                text-align: right;
+                color: v.$light-pink;
+            }
+        }
+    }
+}
