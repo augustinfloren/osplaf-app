@@ -5,6 +5,8 @@ import Hero from './components/Sections/Hero'
 import LeJeu from './components/Sections/LeJeu'
 import Regles from './components/Sections/Regles/Regles'
 import Contact from './components/Sections/Contact'
+import Footer from './components/Sections/Footer'
+
 
 export default function App() {
   return (
@@ -14,6 +16,7 @@ export default function App() {
       <LeJeu />
       <Regles />
       <Contact />
+      <Footer />
     </div>
   )
 }

@@ -3,6 +3,10 @@ export { default as account } from './icons/osplaf-account.png';
 export { default as basket } from './icons/osplaf-basket.png';
 export { default as logo } from './osplaf-logo1.png';
 
+export { default as fb } from './icons/facebook-icon.png';
+export { default as insta } from './icons/instagram-icon.png';
+export { default as ulule } from './icons/ulule-icon.png';
+
 import artiste1 from "./artists/osplaf-artiste1.png";
 import artiste2 from "./artists/osplaf-artiste2.png";
 import artiste3 from "./artists/osplaf-artiste3.png";
@@ -18,5 +22,7 @@ const artists = [
     {name: "Amélie Beaury-Saurel", src: artiste5, date: "1848-1924"},
     {name: "Frida Kahlo", src: artiste6, date: "1593-1653"}
 ]
+
+
 
 export default artists;
