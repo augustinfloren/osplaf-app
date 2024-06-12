@@ -1,8 +1,12 @@
 import './LeJeu.scss';
+
+import Artist from './Artist';
+
+import artists from '../../../assets/index'
+
 import arrow1 from '../../../assets/icons/osplaf-arrow1.png';
 import arrow2 from '../../../assets/icons/osplaf-arrow2.png';
 import cards from '../../../assets/game-content/osplaf-cartes.png';
-import artists from '../../../assets/index'
 
 import ContentSlider from '../../Sliders/ContentSlider';
 
@@ -20,22 +24,7 @@ function LeJeu() {
                     <h3>Elles s'appelaient...</h3>
                     <div className='artists__container'>
                         {artists.map((artist) => (
-                            <div key={artist.name} className="artist">
-                                <div className={`artist__portrait ${artist.id}`}>
-                                    <img src={artist.src} alt={`Portrait de ${artist.name}`} />
-                                    <div className="orbit orbit1">
-                                        <div className={`cube ${artist.id}`}></div>
-                                    </div>
-                                    <div className="orbit orbit2">
-                                        <div className={`cube ${artist.id}`}></div>
-                                    </div>
-                                </div>
-
-                                <div className="artist__text">
-                                    <h5>{artist.name}</h5>
-                                    <p>{artist.date}</p>
-                                </div>
-                            </div>
+                            <Artist key={artist.id} artist={artist} />
                         ))} 
                     </div>
                 </div>
