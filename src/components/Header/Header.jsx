@@ -9,7 +9,7 @@ import {
 
 function Header() {
     return (
-        <header className="header">
+        <header className="header animate__animated animate__fadeIn">
             <nav className='header-nav'>
                 <a href="#" className="header-nav__menu-link">
                     <img src={menu} alt="menu" height={35}/>

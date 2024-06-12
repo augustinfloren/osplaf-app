@@ -2,10 +2,22 @@
 @import "../../../styles/mixins";
 @import "./orbit-animations";
 
+@keyframes fade-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .lejeu {
     background-color: v.$light-purple;
 
     &-content {
+        
         display: flex;
         flex-direction: column;
         align-items: flex-start;
