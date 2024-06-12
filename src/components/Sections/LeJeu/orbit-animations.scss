@@ -1,0 +1,69 @@
+.artist__portrait {
+    .orbit {
+        position: absolute;
+        display: flex;
+
+        top: 7px;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+
+        .cube {
+            position: absolute;
+        }
+    }
+    
+    .orbit1 {
+        .cube {
+            width: clamp(4rem, 7vw, 6rem);
+            height: clamp(4rem, 7vw, 6rem);
+            border: 1rem solid v.$light-pink;
+            border-radius: 30%;
+
+            opacity: 0.2;
+        }
+    }
+
+    .orbit2 {
+        .cube {
+            top: 20px;
+            width: clamp(2rem, 5vw, 3rem);
+            height: clamp(2rem, 5vw, 3rem);
+            border: 6px solid v.$light-pink;
+            border-radius: 50%;
+
+            opacity: 0.1;
+        }
+    }
+
+    &.artemisia {
+        .orbit1 {
+            @include spin(spin1, 0deg, 360deg, 3s);
+            .cube {
+                // @include spin(cube-spin1, 0deg, 360deg, 2s);
+            }
+        }
+
+        .orbit2 {
+            @include spin(spin2, 150deg, 510deg, 3s);
+        }
+    }
+
+    &.anne {
+        .orbit1 {
+            width: 80%;
+
+            @include spin(spin3, -50deg, 310deg, 3s);
+            .cube {
+                opacity: 0.1;
+            }
+        }
+
+        .orbit2 {
+            @include spin(spin4, 0deg, 360deg, 3s);
+            .cube {
+                opacity: 0.3;
+            }
+        }
+    }
+}

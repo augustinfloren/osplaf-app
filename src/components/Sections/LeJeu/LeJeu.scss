@@ -1,5 +1,6 @@
-@use "../../styles/variables" as v;
-@import "../../styles/mixins";
+@use "../../../styles/variables" as v;
+@import "../../../styles/mixins";
+@import "./orbit-animations";
 
 .lejeu {
     background-color: v.$light-purple;
@@ -77,8 +78,15 @@
                     flex: 0 0 23.3333%;
                     width: clamp(20rem, 20vw, 25rem);
 
-                    img {
-                        mix-blend-mode: plus-lighter;
+                    &__portrait {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            mix-blend-mode: plus-lighter;
+                        }
                     }
         
                     &__text {

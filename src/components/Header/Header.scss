@@ -11,14 +11,14 @@
         &__menu-link {
             float: left;
             img {
-                height: clamp(2.5rem, 5vw, 3.2rem);
+                height: clamp(2.9rem, 5vw, 3.2rem);
             }
         }
 
         &__account-link {
             float: right;
             img {
-                height: clamp(2.5rem, 5vw, 4rem);
+                height: clamp(3.3rem, 5vw, 4rem);
             }
         }
 
@@ -26,7 +26,7 @@
             float: right;
             margin-left: 1rem;
             img {
-                height: clamp(2.5rem, 5vw, 4rem);
+                height: clamp(3.3rem, 5vw, 4rem);
             }
         }
         

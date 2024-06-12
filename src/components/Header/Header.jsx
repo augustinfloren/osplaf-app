@@ -3,7 +3,8 @@ import {
     menu,
     account,
     basket,
-    logo
+    logo,
+    logo2
 }   from '../../assets/index.js'
 
 function Header() {
@@ -21,7 +22,7 @@ function Header() {
                 </a>
             </nav>
 
-            <img className="header-title" src={logo} alt="Logo de : Où sont passées les artistes femmes"/>
+            <img className="header-title" src={logo2} alt="Logo de : Où sont passées les artistes femmes"/>
         </header>
     );
 }

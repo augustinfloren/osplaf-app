@@ -1,8 +1,8 @@
-import PlaySlider from '../Sliders/PlaySlider';
-import arrow3 from '../../assets/icons/osplaf-arrow3.png';
-import arrow4 from '../../assets/icons/osplaf-arrow4.png';
-import portrait from '../../assets/portrait.png';
-import { fb, insta, ulule } from '../../assets/index';
+import PlaySlider from '../../Sliders/PlaySlider';
+import arrow3 from '../../../assets/icons/osplaf-arrow3.png';
+import arrow4 from '../../../assets/icons/osplaf-arrow4.png';
+import portrait from '../../../assets/portrait.png';
+import { fb, insta, ulule } from '../../../assets/index';
 
 import './Contact.scss'
 

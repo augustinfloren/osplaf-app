@@ -1,5 +1,5 @@
-@use "../../styles/variables" as v;
-@import "../../styles/mixins";
+@use "../../../styles/variables" as v;
+@import "../../../styles/mixins";
 
 .hero {
     background-color: v.$dark-purple;

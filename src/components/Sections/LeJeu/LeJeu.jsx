@@ -1,10 +1,10 @@
 import './LeJeu.scss';
-import arrow1 from '../../assets/icons/osplaf-arrow1.png';
-import arrow2 from '../../assets/icons/osplaf-arrow2.png';
-import cards from '../../assets/game-content/osplaf-cartes.png';
-import artists from '../../assets/index'
+import arrow1 from '../../../assets/icons/osplaf-arrow1.png';
+import arrow2 from '../../../assets/icons/osplaf-arrow2.png';
+import cards from '../../../assets/game-content/osplaf-cartes.png';
+import artists from '../../../assets/index'
 
-import ContentSlider from '../Sliders/ContentSlider';
+import ContentSlider from '../../Sliders/ContentSlider';
 
 function LeJeu() {
     return (
@@ -21,7 +21,16 @@ function LeJeu() {
                     <div className='artists__container'>
                         {artists.map((artist) => (
                             <div key={artist.name} className="artist">
-                                <img src={artist.src} alt={`Portrait de ${artist.name}`} />
+                                <div className={`artist__portrait ${artist.id}`}>
+                                    <img src={artist.src} alt={`Portrait de ${artist.name}`} />
+                                    <div className="orbit orbit1">
+                                        <div className={`cube ${artist.id}`}></div>
+                                    </div>
+                                    <div className="orbit orbit2">
+                                        <div className={`cube ${artist.id}`}></div>
+                                    </div>
+                                </div>
+
                                 <div className="artist__text">
                                     <h5>{artist.name}</h5>
                                     <p>{artist.date}</p>

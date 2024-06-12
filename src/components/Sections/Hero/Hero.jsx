@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Hero.scss'
 import 'animate.css';
-import box from '../../assets/game-content/osplaf-box.png'
+import box from '../../../assets/game-content/osplaf-box.png'
 
 function Hero() {
     const [isActive, setIsActive] = useState(false);

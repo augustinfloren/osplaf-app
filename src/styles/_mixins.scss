@@ -28,3 +28,12 @@
     border-bottom-left-radius: $radius;
     border-bottom-right-radius: $radius;
 }
+
+@mixin spin($name, $rotate1, $rotate2, $duration) {
+    @keyframes #{$name} {
+        from { transform: rotate($rotate1); }
+        to { transform: rotate($rotate2); }
+    }
+
+    animation: #{$name} #{$duration} infinite linear;
+}
