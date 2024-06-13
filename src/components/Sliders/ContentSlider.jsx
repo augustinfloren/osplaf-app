@@ -63,6 +63,8 @@ function ContentSlider() {
         navigation="false"
         centered-slides="true"
         loop="true"
+        parallax="true"
+        speed="600" 
         breakpoints = {
           JSON.stringify({
               650:{
@@ -78,8 +80,8 @@ function ContentSlider() {
       >
         {images.map((image, index) => (
           <swiper-slide key={image.id}>
-            <div className='img-container'>
-              <img src={image.url} alt={image.name} loading="lazy"/>
+            <div className='img-container' data-swiper-parallax="0">
+              <img src={image.url} alt={image.name} loading="lazy"  data-swiper-parallax="-300"/>
             </div>
           </swiper-slide>
         ))}
