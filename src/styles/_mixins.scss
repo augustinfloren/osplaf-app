@@ -35,6 +35,11 @@
 
 // Animations
 
+@mixin btn-hover() {
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+
 @mixin spin($name, $rotate1, $rotate2, $duration) {
     @keyframes #{$name} {
         from { transform: rotate($rotate1); }

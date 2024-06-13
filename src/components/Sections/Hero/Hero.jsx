@@ -9,10 +9,10 @@ function Hero() {
     return (
         <section className='hero'>
             <div className="hero-content">
-                <div className="hero-content__text animate__animated animate__bounceIn">
+                <div className="hero-content__text">
                     <h1><strong>Menez l'enquête</strong> pour retrouver quelle femme a été effacée de l'histoire de l'art !</h1>
                     <a 
-                        className={`buy-button btn ${isActive ?" animate__animated animate__jello" : ""}`}
+                        className="buy-button"
                         href="#" 
                         onMouseEnter={() => setIsActive(true)}
                         onMouseLeave={() => setIsActive(false)}
@@ -21,7 +21,7 @@ function Hero() {
                     </a>
                 </div>
                 
-                <div className="hero-content__img animate__animated animate__bounceIn">
+                <div className="hero-content__img">
                     <img src={box} alt="Boîte du jeu" />
                 </div>
             </div>

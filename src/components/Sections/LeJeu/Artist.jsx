@@ -1,6 +1,3 @@
-import { motion, spring, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import ScrollReveal from "../../ScrollReveal/ScrollReveal";
 
 function Artist(props) {
