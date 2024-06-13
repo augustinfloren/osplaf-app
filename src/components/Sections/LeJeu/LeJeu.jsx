@@ -1,6 +1,3 @@
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 import Artist from './Artist';
 import ContentSlider from '../../Sliders/ContentSlider';
 
@@ -13,43 +10,10 @@ import cards from '../../../assets/game-content/osplaf-cartes.png';
 
 
 function LeJeu() {
-    const control = useAnimation();
-    const [ref, inView] = useInView();
-
-    useEffect(() => {
-        if (inView) {
-            control.start("visible");
-        } else {
-            control.start("hidden");
-        }
-    }, [control, inView]);
-
-    const boxVariant = {
-        visible: { 
-            opacity: 1, 
-            scale: 1, 
-            transition: { 
-                duration: 0.5,
-            }
-        },
-        hidden: { 
-            opacity: 0, 
-            scale: 1 
-        },
-    }
     return (
         <section className='lejeu'>
             <div className='lejeu-content'>
-                <motion.img 
-                    src={arrow1} 
-                    alt="flêche" 
-                    className='arrow1'
-                    ref={ref}
-                    variants={boxVariant}
-                    initial="hidden"
-                    animate={control}
-                />
-                {/* </motion.img> */}
+                <img src={arrow1} alt="flêche" className='arrow1' />
 
                 <div className="lejeu-content__intro">
                     <h2>Le Jeu</h2>
