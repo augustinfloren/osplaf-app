@@ -50,8 +50,6 @@
                 display: block;
                 width: 90%;
                 object-fit: cover;
-                
-                border-radius: 9.5vw;
 
                 @include respond-to(large) {
                     border-radius: 6.5vw;

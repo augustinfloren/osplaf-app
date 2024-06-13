@@ -81,7 +81,7 @@ function ContentSlider() {
         {images.map((image, index) => (
           <swiper-slide key={image.id}>
             <div className='img-container' data-swiper-parallax="0">
-              <img src={image.url} alt={image.name} loading="lazy"  data-swiper-parallax="-300"/>
+              <img src={image.url} alt={image.name} data-swiper-parallax="-100"/>
             </div>
           </swiper-slide>
         ))}

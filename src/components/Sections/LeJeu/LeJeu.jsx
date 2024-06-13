@@ -1,20 +1,56 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import Artist from './Artist';
+import ContentSlider from '../../Sliders/ContentSlider';
+
 import './LeJeu.scss';
 
-import Artist from './Artist';
-
 import artists from '../../../assets/index'
-
 import arrow1 from '../../../assets/icons/osplaf-arrow1.png';
 import arrow2 from '../../../assets/icons/osplaf-arrow2.png';
 import cards from '../../../assets/game-content/osplaf-cartes.png';
 
-import ContentSlider from '../../Sliders/ContentSlider';
 
 function LeJeu() {
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
+
+    const boxVariant = {
+        visible: { 
+            opacity: 1, 
+            scale: 1, 
+            transition: { 
+                duration: 0.5,
+            }
+        },
+        hidden: { 
+            opacity: 0, 
+            scale: 1 
+        },
+    }
     return (
         <section className='lejeu'>
             <div className='lejeu-content'>
-                <img src={arrow1} alt="flêche" className='arrow1'/>
+                <motion.img 
+                    src={arrow1} 
+                    alt="flêche" 
+                    className='arrow1'
+                    ref={ref}
+                    variants={boxVariant}
+                    initial="hidden"
+                    animate={control}
+                />
+                {/* </motion.img> */}
+
                 <div className="lejeu-content__intro">
                     <h2>Le Jeu</h2>
                     <p>Les artistes femmes ont été empêchées d’apprendre et de pratiquer leur art. Celles qui ont malgré tout réussi à devenir artistes ont été progressivement effacées de l’histoire. Pourtant, certaines sont parvenues jusqu’à nous malgré ces obstacles.

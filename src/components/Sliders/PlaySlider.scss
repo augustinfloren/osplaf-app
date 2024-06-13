@@ -37,8 +37,8 @@
             
     
         &::part(bullet) {
-            height: 2vw;
-            width: 2vw;
+            height: min(2vw, 1.7rem);
+            width: min(2vw, 1.7rem);
             opacity: 0.7;
             margin-bottom: 2vw;
             background-color: v.$light-pink;
@@ -46,8 +46,8 @@
         }
     
         &::part(bullet-active) {
-            height: 2vw;
-            width: 2vw;
+            height: min(2vw, 1.7rem);
+            width: min(2vw, 1.7rem);
             margin-bottom: 2vw;
             background-color: v.$light-purple;
             box-shadow: 1px 1px 20px rgba(241, 161, 255, 0.452);

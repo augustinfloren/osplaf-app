@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, spring, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
@@ -15,8 +15,19 @@ function Artist(props) {
     }, [control, inView]);
 
     const boxVariant = {
-        visible: { mixBlendMode: "plus-lighter", opacity: 1, scale: 1, Transition: { duration: 0.5 } },
-        hidden: { mixBlendMode: "plus-lighter", opacity: 0, scale: 0 },
+        visible: { 
+            mixBlendMode: "plus-lighter", 
+            opacity: 1, 
+            scale: 1, 
+            transition: { 
+                duration: 0.5, 
+                type: "spring",
+                bounce: 0.25
+            } },
+        hidden: { 
+            mixBlendMode: "plus-lighter", 
+            opacity: 0, 
+            scale: 0 },
     }
 
     return (

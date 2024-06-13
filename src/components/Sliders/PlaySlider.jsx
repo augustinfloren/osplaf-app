@@ -40,14 +40,25 @@ function PlaySlider() {
             <swiper-container
                 class="mySwiper"
                 effect="fade"
+                fade-effect= {
+                    JSON.stringify({
+                        crossFade: true,
+                    })
+                }
+                speed="1000"
                 slides-per-view="1"
                 navigation="false"
                 pagination="true"
                 pagination-clickable="true"
                 centered-slides="true"
+                autoplay= {
+                    JSON.stringify({
+                        delay: 2000,
+                    })
+                } 
             >
                 {images.map((image, index) => (
-                <swiper-slide key={image.id}>
+                <swiper-slide key={image.id} lazy="true">
                     <img src={image.url} alt={image.name} loading="lazy"/>
                 </swiper-slide>
                 ))}
