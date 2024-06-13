@@ -1,18 +1,9 @@
 import { motion, spring, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import ScrollReveal from "../../ScrollReveal/ScrollReveal";
 
 function Artist(props) {
-    const control = useAnimation();
-    const [ref, inView] = useInView();
-
-    useEffect(() => {
-        if (inView) {
-            control.start("visible");
-        } else {
-            control.start("hidden");
-        }
-    }, [control, inView]);
 
     const boxVariant = {
         visible: { 
@@ -31,14 +22,10 @@ function Artist(props) {
     }
 
     return (
-        <motion.div 
-            ref={ref}
-            className="artist"
+        <ScrollReveal
+            customClass="artist"
             variants={boxVariant}
-            initial="hidden"
-            animate={control}
         >
-
             <div className={`artist__portrait ${props.artist.id}`}>
                 <img src={props.artist.src} alt={`Portrait de ${props.artist.name}`} />
                 <div className="orbit orbit1">
@@ -53,7 +40,7 @@ function Artist(props) {
                 <h5>{props.artist.name}</h5>
                 <p>{props.artist.date}</p>
             </div>
-        </motion.div>
+        </ScrollReveal>
     )
 }
 
