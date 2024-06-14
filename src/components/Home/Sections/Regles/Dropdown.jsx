@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import './Regles.scss';
-import dropdownIcon from '../../../assets/icons/osplaf-dropdown.png';
+import dropdownIcon from '../../../../assets/icons/osplaf-dropdown.png';
 
 function Dropdown(rule) {
 

@@ -39,9 +39,6 @@ function AppMenu({open}) {
             variants={boxVariant}
             initial="hidden"
             animate={control}
-            // style= {{
-            //     display: open ? "flex" : "none",
-            // }}
         >
             <a href="#">Acheter</a>
             <a href="#">Le Jeu</a>

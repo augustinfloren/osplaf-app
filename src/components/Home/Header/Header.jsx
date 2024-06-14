@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AppMenu from "./AppMenu";
+import AppMenu from "./AppMenu.jsx";
 import "./Header.scss";
 import {
     menu,
@@ -9,7 +9,7 @@ import {
     basket,
     basket2,
     logo2
-} from '../../assets/index.js';
+} from '../../../assets/index.js';
 
 function Header() {
     const [open, setOpen] = useState(false);
@@ -17,7 +17,6 @@ function Header() {
     const handleMenuClick = (e) => {
         e.preventDefault();
         setOpen(!open);
-        console.log(open)
     };
 
     useEffect(() => {
@@ -42,14 +41,14 @@ function Header() {
                 </a>
                 <a href="#" className="header-nav__basket-link nav">
                     {open 
-                        ? <img src={basket2} alt="panier" height={40}/>
-                        : <img src={basket} alt="panier" height={40}/>
+                        ? <img src={basket2} alt="Bouton du panier" height={40}/>
+                        : <img src={basket} alt="Bouton du panier" height={40}/>
                     }
                 </a>
                 <a href="#" className="header-nav__account-link nav">
                     {open 
-                        ? <img src={account2} alt="compte" height={40}/>
-                        : <img src={account} alt="compte" height={40}/>
+                        ? <img src={account2} alt="Bouton du compte" height={40}/>
+                        : <img src={account} alt="Bouton du compte" height={40}/>
                     }
                 </a>
             </nav>
