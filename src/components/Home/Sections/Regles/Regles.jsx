@@ -36,7 +36,7 @@ const rules = [
 
 function Regles() {
     return (
-        <section className='regles'>
+        <section className='regles' id='regles'>
             <div className="regles__content">
                 <div className='regles__content__title'>
                     <h2>Règles du jeu</h2>

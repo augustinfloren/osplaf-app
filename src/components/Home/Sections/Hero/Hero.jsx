@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import './Hero.scss'
 import 'animate.css';
 import box from '../../../../assets/game-content/osplaf-box.png'
@@ -11,14 +13,15 @@ function Hero() {
             <div className="hero-content">
                 <div className="hero-content__text">
                     <h1><strong>Menez l'enquête</strong> pour retrouver quelle femme a été effacée de l'histoire de l'art !</h1>
-                    <a 
+                    <NavLink 
+                        to="/shop"
                         className="buy-button"
                         href="#" 
                         onMouseEnter={() => setIsActive(true)}
                         onMouseLeave={() => setIsActive(false)}
                     >
                         Acheter le jeu
-                    </a>
+                    </NavLink>
                 </div>
                 
                 <div className="hero-content__img">

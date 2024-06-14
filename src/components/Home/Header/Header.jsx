@@ -53,7 +53,7 @@ function Header() {
                 </a>
             </nav>
             
-            <AppMenu open={open} />
+            <AppMenu open={open} setOpen={setOpen} />
 
             <img className="header-title" src={logo2} alt="Logo de : Où sont passées les artistes femmes"/>
         </header>
