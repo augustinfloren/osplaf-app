@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-
+import { NavLink } from 'react-router-dom';
 
 function AppMenu({open}) {
     const control = useAnimation();
@@ -21,8 +21,6 @@ function AppMenu({open}) {
                 display: "none",
             },
         },
-
-        
     }
 
     useEffect(() => {
@@ -40,7 +38,7 @@ function AppMenu({open}) {
             initial="hidden"
             animate={control}
         >
-            <a href="#">Acheter</a>
+            <NavLink to="/shop">Acheter</NavLink>
             <a href="#">Le Jeu</a>
             <a href="#">Règles du jeu</a>
             <a href="#">Contact</a>
