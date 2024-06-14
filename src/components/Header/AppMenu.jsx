@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 
 function AppMenu({open}) {
@@ -8,23 +8,28 @@ function AppMenu({open}) {
         visible: { 
             opacity: 1, 
             transition: { 
-                duration: 0.5, 
+                duration: 0.7, 
                 type: "spring",
                 bounce: 0.25
-            } },
+            },
+            display: "flex"
+            },
+
         hidden: { 
             opacity: 0,
+            transitionEnd: {
+                display: "none",
+            },
         },
+
+        
     }
 
     useEffect(() => {
         if (open) {
             control.start("visible");
-
-            document.querySelector("body").style.overflow = "hidden";
         } else {
             control.start("hidden");
-            document.querySelector("body").style.overflow = "";
         }
     }, [control, open]);
 
@@ -34,6 +39,9 @@ function AppMenu({open}) {
             variants={boxVariant}
             initial="hidden"
             animate={control}
+            // style= {{
+            //     display: open ? "flex" : "none",
+            // }}
         >
             <a href="#">Acheter</a>
             <a href="#">Le Jeu</a>

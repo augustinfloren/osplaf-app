@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AppMenu from "./AppMenu";
 import "./Header.scss";
 import {
@@ -17,7 +17,16 @@ function Header() {
     const handleMenuClick = (e) => {
         e.preventDefault();
         setOpen(!open);
+        console.log(open)
     };
+
+    useEffect(() => {
+        if (open) {
+            document.querySelector("body").style.overflow = "hidden";
+        } else {
+            document.querySelector("body").style.overflow = "";
+        }
+    }, [open]);
 
     return (
         <header className="header">
@@ -44,7 +53,7 @@ function Header() {
                     }
                 </a>
             </nav>
-
+            
             <AppMenu open={open} />
 
             <img className="header-title" src={logo2} alt="Logo de : Où sont passées les artistes femmes"/>
