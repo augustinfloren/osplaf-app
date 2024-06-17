@@ -3,15 +3,15 @@ import ContentSlider from '../../Sliders/ContentSlider';
 
 import './LeJeu.scss';
 
-import artists from '../../../assets/index'
-import arrow1 from '../../../assets/icons/osplaf-arrow1.png';
-import arrow2 from '../../../assets/icons/osplaf-arrow2.png';
-import cards from '../../../assets/game-content/osplaf-cartes.png';
+import artists from '../../../../assets/index'
+import arrow1 from '../../../../assets/icons/osplaf-arrow1.png';
+import arrow2 from '../../../../assets/icons/osplaf-arrow2.png';
+import cards from '../../../../assets/game-content/osplaf-cartes.png';
 
 
 function LeJeu() {
     return (
-        <section className='lejeu'>
+        <section className='lejeu' id='lejeu'>
             <div className='lejeu-content'>
                 <img src={arrow1} alt="flêche" className='arrow1' />
 

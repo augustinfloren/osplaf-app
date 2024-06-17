@@ -1,8 +1,8 @@
 import PlaySlider from '../../Sliders/PlaySlider';
-import arrow3 from '../../../assets/icons/osplaf-arrow3.png';
-import arrow4 from '../../../assets/icons/osplaf-arrow4.png';
-import portrait from '../../../assets/portrait.png';
-import { fb, insta, ulule } from '../../../assets/index';
+import arrow3 from '../../../../assets/icons/osplaf-arrow3.png';
+import arrow4 from '../../../../assets/icons/osplaf-arrow4.png';
+import portrait from '../../../../assets/portrait.png';
+import { fb, insta, ulule } from '../../../../assets/index';
 
 import './Contact.scss'
 
@@ -11,7 +11,7 @@ function Contact() {
         <section className="contact">
             <div className="contact-content">
                 <PlaySlider />
-                <div className="contact-content__form">
+                <div className="contact-content__form" id="contact">
                     <img src={arrow3} alt="flêche" className='arrow3'/>
                     <h2>Contact</h2>
 

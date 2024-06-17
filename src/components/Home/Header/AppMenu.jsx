@@ -1,8 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { NavLink } from 'react-router-dom';
 
-
-function AppMenu({open}) {
+function AppMenu({open, setOpen}) {
     const control = useAnimation();
     const boxVariant = {
         visible: { 
@@ -21,8 +21,6 @@ function AppMenu({open}) {
                 display: "none",
             },
         },
-
-        
     }
 
     useEffect(() => {
@@ -33,20 +31,36 @@ function AppMenu({open}) {
         }
     }, [control, open]);
 
+    function handleClickedLinks() {
+        setOpen(!open);
+    }
+
     return (
         <motion.nav 
             className="osplaf-menu"
             variants={boxVariant}
             initial="hidden"
             animate={control}
-            // style= {{
-            //     display: open ? "flex" : "none",
-            // }}
         >
-            <a href="#">Acheter</a>
-            <a href="#">Le Jeu</a>
-            <a href="#">Règles du jeu</a>
-            <a href="#">Contact</a>
+            <NavLink to="/shop">Acheter</NavLink>
+            <a 
+                href="#lejeu"
+                onClick={handleClickedLinks}
+            >
+                Le Jeu
+            </a>
+            <a 
+                href="#regles"
+                onClick={handleClickedLinks}
+            >
+                Règles du jeu
+            </a>
+            <a 
+                href="#contact"
+                onClick={handleClickedLinks}
+            >
+                Contact
+            </a>
 
         </motion.nav>
     )

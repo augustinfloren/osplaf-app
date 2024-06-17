@@ -1,14 +1,14 @@
-import '../Sliders/PlaySlider.scss'
+import './PlaySlider.scss'
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
 register();
 
-import image1 from '../../assets/play-images/1.png'
-import image2 from '../../assets/play-images/2.png'
-import image3 from '../../assets/play-images/3.png'
-import image4 from '../../assets/play-images/4.png'
+import image1 from '../../../assets/play-images/1.png'
+import image2 from '../../../assets/play-images/2.png'
+import image3 from '../../../assets/play-images/3.png'
+import image4 from '../../../assets/play-images/4.png'
 
 const images = [
     {
