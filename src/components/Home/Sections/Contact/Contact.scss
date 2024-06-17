@@ -1,0 +1,157 @@
+@use "../../../../styles/variables" as v;
+@import "../../../../styles/mixins";
+
+.contact {
+    background-color: v.$light-pink;
+
+    &-content {
+        background-color: v.$dark-purple;
+
+        @include border-radius(v.$box-radius);
+        padding: 1vw 0 v.$bottom-pad 0;
+
+        &__form {
+            position: relative;
+
+            padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
+
+            @include respond-to(large) {
+                padding-left: v.$pad-l;
+                padding-right: v.$pad-l;
+            }
+
+            .arrow3 {
+                position: absolute;
+                width: 11rem;
+                right: calc(v.$pad + 20rem);
+                top: 5rem;
+    
+                @include respond-to(large) {
+                    right: calc(v.$pad-l + 23rem);
+                }
+    
+                @include respond-to(medium) {
+                    width: 10rem;
+                }
+
+                @include respond-to(small) {
+                    right: calc(v.$pad + 17rem);
+                }
+            }
+    
+            h2 {
+                display: block;
+                text-align: right;
+                color: v.$light-pink;
+            }
+
+            .contact-form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1vw;
+                
+                margin-top: 2.2rem;
+
+                input {
+                    border-radius: 100px;
+                }
+                
+                input, &__message {
+                    padding: 1.5rem 3.8rem;
+                    
+                    outline: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
+                    border: none;
+                    outline-offset: -4px;
+                    color: v.$light-pink;
+                    background: none;
+                }
+
+                &__name, &__mail {
+                    flex-grow: 1;
+                }
+
+                &__objet, &__message {
+                    width: 100%;
+                }
+
+                &__message {
+                    height: 20rem;
+                    border-radius: 40px;
+
+                    & textarea {
+                        width: 100%;
+                        height: 100%;
+                        
+                        resize: none;
+                        outline: none;
+
+                        background: none;
+                        border: none;
+
+                        color: v.$light-pink;
+                        scrollbar-color:  v.$light-purple rgba(0, 0, 255, 0);
+                        scrollbar-width: thin;
+                    }
+                }
+            }
+        }
+
+        &__bio {
+            display: flex;
+            position: relative;
+            gap: 5vw;
+            align-items: center;
+            width: 100%;
+
+            padding: 0 v.$pad 0 v.$pad;
+
+            @include respond-to(large) {
+                padding-left: v.$pad-l;
+                padding-right: v.$pad-l;
+            }
+
+            @include respond-to(medium) {
+                flex-direction: column;
+            }
+            
+            .arrow4 {
+                position: absolute;
+                top: 0;
+                right: -8rem;
+                width: 20rem;
+            }
+
+            .bio-img {
+                max-width: 40rem;
+                flex-basis: 0;
+                flex-grow: 2;
+            }
+
+            .bio-text {
+                display: flex;
+                flex-direction: column;
+
+                flex-basis: 0;
+                flex-grow: 3;
+                gap: v.$title-lh;
+
+                color: v.$light-pink;
+            }
+        }
+
+        &__network-icons {
+            margin-top: v.$title-lh * 3;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 3vw;
+            width: 100%;
+
+            a img {
+                width: clamp(6rem, 10vw, 10rem);
+            }
+        }
+    }
+}

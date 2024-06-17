@@ -1,0 +1,92 @@
+@use "../../../styles/variables" as v;
+@import "../../../styles/mixins";
+
+.header {
+    position: relative;
+
+    &-nav {
+        position: absolute;
+        width: 100%;
+        padding: 2.2rem 2.5rem;
+        &__menu-link {
+            position: absolute;
+            z-index: 3;
+            float: left;
+            img {
+                height: clamp(2.9rem, 5vw, 3.2rem);
+            }
+        }
+
+        &__account-link {
+            float: right;
+            img {
+                height: clamp(3.3rem, 5vw, 4rem);
+            }
+        }
+
+        &__basket-link {
+            float: right;
+            margin-left: 1rem;
+            img {
+                height: clamp(3.3rem, 5vw, 4rem);
+            }
+        }
+
+        .nav {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .nav:hover {
+            @include btn-hover();
+        }
+    }
+
+    &-title {
+        position: absolute;
+        width: clamp(30rem, 35vw, 60rem);
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%); 
+        margin-top: 10rem;
+
+        @include respond-to(medium) {
+            margin-top: 13rem;
+        }
+
+        @include respond-to(small-height) {
+            margin-top: 15vh;
+        }
+
+    }
+
+    .header-nav {
+        z-index: 2;
+    }
+
+    .osplaf-menu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3vh;
+        
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+
+        color: v.$light-pink;
+        background-color: v.$light-purple;
+
+
+        a {
+            font-weight: 700;
+            font-size: clamp(4.209rem, 3.77276rem + 1.148vw, 5.61rem);
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                @include btn-hover();
+            }
+        }
+    }
+}

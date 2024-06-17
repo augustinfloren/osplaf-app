@@ -1,0 +1,22 @@
+@use "../../../styles/variables" as v;
+@import "../../../styles/mixins";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: v.$title-lh;
+
+    padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
+
+    @include respond-to(large) {
+        padding-left: v.$pad-l;
+        padding-right: v.$pad-l;
+    }
+
+    color: v.$light-purple;
+    background-color: v.$light-pink;
+
+    li {
+        font-weight: 700;
+    }
+}

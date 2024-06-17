@@ -1,20 +1,22 @@
-import './App.scss'
-import React, { useEffect, useState } from 'react'
-import Header from './components/Header/Header'
-import Hero from './components/Sections/Hero'
-import LeJeu from './components/Sections/LeJeu'
-import Regles from './components/Sections/Regles/Regles'
+import React from 'react';
+import {RouterProvider, createBrowserRouter} from "react-router-dom";
 
-export default function App() {
-  return (
-    <div className='container'> 
-      <Header />
-      <Hero />
-      <LeJeu />
-      <Regles />
-    </div>
-  )
+import Home from './components/Home/Home';
+import Shop from './components/Shop/Shop';
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Home/>
+    },
+    {
+      path: '/shop',
+      element: <Shop />
+    }
+]);
+
+function App()  {
+  return <RouterProvider router={router} />
 }
 
-
-
+export default App;

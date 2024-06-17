@@ -1,16 +1,20 @@
-import './LeJeu.scss';
-import arrow1 from '../../assets/icons/osplaf-arrow1.png';
-import arrow2 from '../../assets/icons/osplaf-arrow2.png';
-import cards from '../../assets/game-content/osplaf-cartes.png';
-import artists from '../../assets/index'
+import Artist from './Artist';
+import ContentSlider from '../../Sliders/ContentSlider';
 
-import ContentSlider from '../Sliders/ContentSlider';
+import './LeJeu.scss';
+
+import artists from '../../../../assets/index'
+import arrow1 from '../../../../assets/icons/osplaf-arrow1.png';
+import arrow2 from '../../../../assets/icons/osplaf-arrow2.png';
+import cards from '../../../../assets/game-content/osplaf-cartes.png';
+
 
 function LeJeu() {
     return (
-        <section className='lejeu'>
+        <section className='lejeu' id='lejeu'>
             <div className='lejeu-content'>
-                <img src={arrow1} alt="flêche" className='arrow1'/>
+                <img src={arrow1} alt="flêche" className='arrow1' />
+
                 <div className="lejeu-content__intro">
                     <h2>Le Jeu</h2>
                     <p>Les artistes femmes ont été empêchées d’apprendre et de pratiquer leur art. Celles qui ont malgré tout réussi à devenir artistes ont été progressivement effacées de l’histoire. Pourtant, certaines sont parvenues jusqu’à nous malgré ces obstacles.
@@ -20,13 +24,7 @@ function LeJeu() {
                     <h3>Elles s'appelaient...</h3>
                     <div className='artists__container'>
                         {artists.map((artist) => (
-                            <div key={artist.name} className="artist">
-                                <img src={artist.src} alt={`Portrait de ${artist.name}`} />
-                                <div className="artist__text">
-                                    <h5>{artist.name}</h5>
-                                    <p>{artist.date}</p>
-                                </div>
-                            </div>
+                            <Artist key={artist.id} artist={artist} />
                         ))} 
                     </div>
                 </div>
