@@ -1,11 +1,8 @@
 import ShopifyBtn from './ShopifyBtn'
 
-function Shop() {
+export default function Shop() {
     return (
-        <div>
-            <ShopifyBtn />
+            <h1></h1>
         </div>
     )
 }
-
-export default Shop;
