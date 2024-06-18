@@ -1,8 +1,8 @@
-export { default as menu } from './icons/osplaf-burger.png';
+export { default as menu } from './icons/osplaf-burger2.png';
 export { default as account } from './icons/osplaf-account.png';
 export { default as basket } from './icons/osplaf-basket.png';
 
-export { default as menu2 } from './icons/osplaf-close.png';
+export { default as menu2 } from './icons/osplaf-close2.png';
 export { default as account2 } from './icons/osplaf-account2.png';
 export { default as basket2 } from './icons/osplaf-basket2.png';
 
