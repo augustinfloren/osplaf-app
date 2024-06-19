@@ -4,41 +4,32 @@
 .header {
     position: relative;
 
-    &-nav {
-        position: fixed;
-        width: 100%;
-        padding: 1.5rem 1.2rem;
+    &__burger {
+        cursor: pointer;
+        z-index: 4;
 
-        &__menu-link {
+        position: fixed;
+        top: -6rem;
+        left: -6rem;
+        
+        width: clamp(13rem, 25vw, 14rem);
+        height: clamp(13rem, 25vw, 14rem);
+        border-radius: 100%;
+
+        background-color: v.$light-purple;
+
+        &.active {
+            background-color: v.$light-pink;
+        }
+
+        &__link {
             position: absolute;
             z-index: 3;
-            float: left;
+            left: 7rem;
+            top: 7.5rem;
             img {
                 height: clamp(2.9rem, 5vw, 3.2rem);
             }
-        }
-
-        .circle {
-            position: absolute;
-            top: -6rem;
-            left: -6rem;
-            border-radius: 100%;
-            width: clamp(13rem, 25vw, 14rem);
-            height: clamp(13rem, 25vw, 14rem);
-            background-color: v.$light-purple;
-            transition: all 1s ease;
-
-            &.active {
-                background-color: v.$light-pink;
-            }
-        }
-
-        .nav {
-            transition: all 0.2s ease-in-out;
-        }
-        
-        .nav:hover {
-            @include btn-hover();
         }
     }
 
@@ -83,11 +74,6 @@
         a {
             font-weight: 700;
             font-size: clamp(4.209rem, 3.77276rem + 1.148vw, 5.61rem);
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                @include btn-hover();
-            }
         }
     }
 }

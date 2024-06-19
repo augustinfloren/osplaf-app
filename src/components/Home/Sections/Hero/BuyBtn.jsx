@@ -53,6 +53,13 @@ function BuyBtn() {
                 boxShadow: "0px 0px 20px #5737bf6e",
                 fontWeight: 600,
             }}
+            whileTap={{ 
+                scale: 0.9, 
+                backgroundColor: "#FFE5E5",
+                color: "#5637BF",
+                boxShadow: "0px 0px 7px #5737bf6e",
+                fontWeight: 600,
+            }}
             onClick={() => handleBuy(products[0].variants[0].id)}>
                 Acheter le jeu
         </motion.a>

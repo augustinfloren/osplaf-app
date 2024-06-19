@@ -10,7 +10,7 @@ function Hero() {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <section className='hero'>
+        <section className='hero' id="hero">
             <div className="hero-content">
                 <div className="hero-content__text">
                     <h1><strong>Menez l'enquête</strong> pour retrouver quelle femme a été effacée de l'histoire de l'art !</h1>

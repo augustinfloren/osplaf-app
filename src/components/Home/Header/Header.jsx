@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import AppMenu from "./AppMenu.jsx";
 import "./Header.scss";
 import {
@@ -25,18 +26,27 @@ function Header() {
 
     return (
         <header className="header">
-            <nav className='header-nav'>
-                <div className={`circle ${open ? "active" : ""}`}></div>
-                <a href="#" 
-                    className="header-nav__menu-link nav"
-                    onClick={handleMenuClick}
-                >
+            <motion.div 
+                className={`header__burger ${open ? "active" : ""}`}
+                onClick={handleMenuClick}
+                whileHover={{
+                    top: "-5rem",
+                    left: "-5rem"
+                }}
+            >
+                <motion.a 
+                    href="#" 
+                    className="header__burger__link"
+                    whileHover={{
+                        scale: 1.2
+                    }}
+                >   
                     {open 
                         ? <img src={menu2} alt="Bouton du menu" height={35}/>
                         : <img src={menu} alt="Bouton du menu" height={35}/>
                     }
-                </a>
-            </nav>
+                </motion.a>
+            </motion.div>
             
             <AppMenu open={open} setOpen={setOpen} />
 
