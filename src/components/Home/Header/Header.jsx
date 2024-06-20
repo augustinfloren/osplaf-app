@@ -18,9 +18,18 @@ function Header() {
 
     useEffect(() => {
         if (open) {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            if (scrollbarWidth > 0) {
+                document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+            } else {
+                document.documentElement.style.setProperty('--scrollbar-width', `16px`); 
+            }
             document.querySelector("body").style.overflow = "hidden";
+            document.querySelector("body").style.paddingRight = `var(--scrollbar-width)`;
         } else {
+            document.documentElement.style.removeProperty('--scrollbar-width');
             document.querySelector("body").style.overflow = "";
+            document.querySelector("body").style.paddingRight = "";
         }
     }, [open]);
 
@@ -34,7 +43,7 @@ function Header() {
                     left: "-5rem"
                 }}
                 whileTap={{
-                    scale: 1.5,
+                    scale: 1.5, 
                 }}
                 transition={{
                     type: "spring", bounce: 0.5
