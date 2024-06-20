@@ -30,16 +30,19 @@ function AppMenu({open, setOpen}) {
     const boxVariant = {
         visible: { 
             opacity: 1, 
+            translateX: 0,
             transition: { 
-                duration: 0.7, 
-                type: "spring",
-                bounce: 0.25
+                type: "spring", duration: 0.7, bounce: 0.2
             },
             display: "flex"
             },
 
         hidden: { 
             opacity: 0,
+            translateX: -1000, 
+            transition: { 
+                type: "spring", duration: 1, bounce: 0.5
+            },
             transitionEnd: {
                 display: "none",
             },
@@ -65,7 +68,7 @@ function AppMenu({open, setOpen}) {
             initial="hidden"
             animate={control}
         >
-            {links.map((link) => (
+            {links.map((link, i) => (
                 <motion.a 
                     key={link.id}
                     href={link.href}
@@ -73,10 +76,14 @@ function AppMenu({open, setOpen}) {
 
                     whileHover={{
                         scale: 0.8,
-                        rotate: -5,
+                        rotate: i % 2 === 0 ? -5 : 5,
                         transition: {
-                            duration: 0.2
+                            type: "spring", duration: 0.5, bounce: 0.5
                         },
+                    }}
+
+                    whileTap= {{
+                        scale: 1,
                     }}
                 >
                     {link.name}

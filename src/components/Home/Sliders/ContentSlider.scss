@@ -2,6 +2,7 @@
 @import "../../../styles/mixins";
 
 .content-slider {
+    z-index: 1;
     display: flex;
     justify-content: center;
     position: relative;

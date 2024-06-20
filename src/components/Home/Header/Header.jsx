@@ -33,12 +33,18 @@ function Header() {
                     top: "-5rem",
                     left: "-5rem"
                 }}
+                whileTap={{
+                    scale: 1.5,
+                }}
+                transition={{
+                    type: "spring", bounce: 0.5
+                }}
             >
                 <motion.a 
                     href="#" 
                     className="header__burger__link"
                     whileHover={{
-                        scale: 1.2
+                        scale: 1.1
                     }}
                 >   
                     {open 

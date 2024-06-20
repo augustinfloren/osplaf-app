@@ -7,7 +7,6 @@ import 'animate.css';
 import box from '../../../../assets/game-content/osplaf-box.png'
 
 function Hero() {
-    const [isActive, setIsActive] = useState(false);
 
     return (
         <section className='hero' id="hero">
