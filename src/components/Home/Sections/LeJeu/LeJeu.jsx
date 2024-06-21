@@ -3,7 +3,7 @@ import ContentSlider from '../../Sliders/ContentSlider';
 
 import './LeJeu.scss';
 
-import artists from '../../../../assets/index'
+import {artists} from '../../../../assets/index'
 import arrow1 from '../../../../assets/icons/osplaf-arrow1.png';
 import arrow2 from '../../../../assets/icons/osplaf-arrow2.png';
 import cards from '../../../../assets/game-content/osplaf-cartes.png';

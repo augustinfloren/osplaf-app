@@ -17,15 +17,19 @@ function Header() {
     };
 
     useEffect(() => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
         if (open) {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            if (scrollbarWidth > 0) {
-                document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
-            } else {
-                document.documentElement.style.setProperty('--scrollbar-width', `16px`); 
-            }
             document.querySelector("body").style.overflow = "hidden";
-            document.querySelector("body").style.paddingRight = `var(--scrollbar-width)`;
+            if (!isMobile) {
+                if (scrollbarWidth > 0) {
+                    document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+                } else {
+                    document.documentElement.style.setProperty('--scrollbar-width', `16px`); // Default value
+                }
+                document.querySelector("body").style.paddingRight = `var(--scrollbar-width)`;
+            }
         } else {
             document.documentElement.style.removeProperty('--scrollbar-width');
             document.querySelector("body").style.overflow = "";

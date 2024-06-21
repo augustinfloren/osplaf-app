@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import Hexa from './Hexa';
 
 import BuyBtn from './BuyBtn';
 import './Hero.scss'
@@ -18,6 +17,7 @@ function Hero() {
                 
                 <div className="hero-content__img">
                     <img src={box} alt="Boîte du jeu" />
+                    <Hexa />
                 </div>
             </div>
         </section>

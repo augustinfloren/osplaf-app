@@ -13,6 +13,16 @@ export { default as fb } from './icons/facebook-icon.png';
 export { default as insta } from './icons/instagram-icon.png';
 export { default as ulule } from './icons/ulule-icon.png';
 
+import hexa1 from './game-content/hexa/hexa1.png';
+import hexa2 from './game-content/hexa/hexa2.png';
+import hexa3 from './game-content/hexa/hexa3.png';
+
+const hexa = [
+    {id:"hexa1", alt: "Halo décoratif", src: hexa1},
+    {id:"hexa2", alt: "Halo décoratif", src: hexa2},
+    {id:"hexa3", alt: "Halo décoratif", src: hexa3},
+]
+
 import artiste1 from "./artists/osplaf-artiste1.png";
 import artiste2 from "./artists/osplaf-artiste2.png";
 import artiste3 from "./artists/osplaf-artiste3.png";
@@ -29,6 +39,4 @@ const artists = [
     {id:"frida", name: "Frida Kahlo", src: artiste6, date: "1593-1653"}
 ]
 
-
-
-export default artists;
+export { hexa, artists };
