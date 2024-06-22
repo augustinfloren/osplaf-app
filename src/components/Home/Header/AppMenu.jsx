@@ -31,9 +31,11 @@ function AppMenu({open, setOpen}) {
         show: { 
             translateX: 0,
             transition: { 
-                type: "spring", duration: 0.7, bounce: 0.2,
-                staggerChildren: 0.15,
-                delayChildren: 0.3,
+                type: "spring", 
+                duration: 0.7, 
+                bounce: 0.2,
+                staggerChildren: 0.05,
+                delayChildren: 0.2,
             },
             display: "flex"
             },
@@ -43,8 +45,10 @@ function AppMenu({open, setOpen}) {
             transition: {
                 delay: 0.2,
                 type: "spring", 
-                duration: 1, 
-                bounce: 0.5
+                duration: 2, 
+                bounce: 0.5,
+                staggerChildren: 0.05, 
+                staggerDirection: -1
             },
             transitionEnd: {
                 display: "none",
@@ -56,7 +60,8 @@ function AppMenu({open, setOpen}) {
             opacity: 0,
             scale: 0,
             transition: {
-                delay: 0.2,
+                // duration: 2,
+                // delay: 0.2,
             },
         },
         show: { 
