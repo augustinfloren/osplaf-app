@@ -1,6 +1,6 @@
-import { motion, useAnimation } from "framer-motion";
+import { delay, motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { NavLink } from 'react-router-dom';
+import Link from "./Link"
 
 const links = [
     {
@@ -27,31 +27,47 @@ const links = [
 
 function AppMenu({open, setOpen}) {
     const control = useAnimation();
-    const boxVariant = {
-        visible: { 
-            opacity: 1, 
+    const containerVariants = {
+        show: { 
             translateX: 0,
             transition: { 
-                type: "spring", duration: 0.7, bounce: 0.2
+                type: "spring", duration: 0.7, bounce: 0.2,
+                staggerChildren: 0.15,
+                delayChildren: 0.3,
             },
             display: "flex"
             },
 
         hidden: { 
-            opacity: 0,
             translateX: -1000, 
-            transition: { 
-                type: "spring", duration: 1, bounce: 0.5
+            transition: {
+                delay: 0.2,
+                type: "spring", 
+                duration: 1, 
+                bounce: 0.5
             },
             transitionEnd: {
                 display: "none",
             },
         },
     }
+    const childrenVariants = {
+        hidden: { 
+            opacity: 0,
+            scale: 0,
+            transition: {
+                delay: 0.2,
+            },
+        },
+        show: { 
+            opacity: 1,
+            scale: 1,
+        }
+    }
 
     useEffect(() => {
         if (open) {
-            control.start("visible");
+            control.start("show");
         } else {
             control.start("hidden");
         }
@@ -64,30 +80,21 @@ function AppMenu({open, setOpen}) {
     return (
         <motion.nav 
             className="osplaf-menu"
-            variants={boxVariant}
+            variants={containerVariants}
             initial="hidden"
             animate={control}
         >
             {links.map((link, i) => (
-                <motion.a 
+                <motion.div
                     key={link.id}
-                    href={link.href}
                     onClick={handleClickedLinks}
-
-                    whileHover={{
-                        scale: 0.8,
-                        rotate: i % 2 === 0 ? -5 : 5,
-                        transition: {
-                            type: "spring", duration: 0.5, bounce: 0.5
-                        },
-                    }}
-
-                    whileTap= {{
-                        scale: 1,
-                    }}
+                    variants={childrenVariants}
                 >
-                    {link.name}
-                </motion.a>
+                    <Link 
+                        link={link}
+                        index={i}
+                    />
+                </motion.div>
             ))}
         </motion.nav>
     )

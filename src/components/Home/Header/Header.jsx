@@ -11,6 +11,30 @@ import {
 function Header() {
     const [open, setOpen] = useState(false);
 
+    const burgerVariants = {
+        initial: {
+            backgroundColor: "#5637BF",
+        },
+        click: {
+            backgroundColor: "#FFE5E5",
+        },
+        hover: {
+            top: "-5rem",
+            left: "-5rem",
+            transition: {
+                type: "spring", 
+                bounce: 0.5
+            }
+        },
+        tap: {
+            scale: 1.5, 
+            transition: {
+                type: "spring", 
+                bounce: 0.5
+            }
+        },
+    }
+
     const handleMenuClick = (e) => {
         e.preventDefault();
         setOpen(!open);
@@ -42,16 +66,10 @@ function Header() {
             <motion.div 
                 className={`header__burger ${open ? "active" : ""}`}
                 onClick={handleMenuClick}
-                whileHover={{
-                    top: "-5rem",
-                    left: "-5rem"
-                }}
-                whileTap={{
-                    scale: 1.5, 
-                }}
-                transition={{
-                    type: "spring", bounce: 0.5
-                }}
+                variants={burgerVariants}
+                animate={open ? "click" : "initial"}
+                whileHover={"hover"}
+                whileTap={"tap"}
             >
                 <motion.a 
                     href="#" 

@@ -30,10 +30,10 @@ function Hexa() {
     const childrenVariants = {
       hidden: { 
         opacity: 0,
-     },
+      },
       show: { 
         opacity: 1,
-     }
+      }
     };
   
     return (

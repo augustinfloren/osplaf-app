@@ -1,4 +1,5 @@
 import Hexa from './Hexa';
+import { motion } from "framer-motion";
 
 import BuyBtn from './BuyBtn';
 import './Hero.scss'
@@ -16,7 +17,21 @@ function Hero() {
                 </div>
                 
                 <div className="hero-content__img">
-                    <img src={box} alt="Boîte du jeu" />
+                    <motion.img 
+                        className="box"
+                        src={box} 
+                        alt="Boîte du jeu" 
+                        whileHover={{
+                            scale: 1.05,
+                        }}
+                        transition={{
+                            type: "spring",
+                            duration: 0.1,
+                            damping: 5,
+                            stiffness: 100,
+                            restDelta: 0.001
+                        }}
+                    />
                     <Hexa />
                 </div>
             </div>

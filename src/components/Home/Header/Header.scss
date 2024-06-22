@@ -16,12 +16,6 @@
         height: clamp(13rem, 25vw, 14rem);
         border-radius: 100%;
 
-        background-color: v.$light-purple;
-
-        &.active {
-            background-color: v.$light-pink;
-        }
-
         &__link {
             position: absolute;
             z-index: 3;
@@ -72,6 +66,7 @@
 
 
         a {
+            display: block;
             font-weight: 700;
             font-size: clamp(4.209rem, 3.77276rem + 1.148vw, 5.61rem);
         }
