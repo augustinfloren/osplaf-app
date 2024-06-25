@@ -64,7 +64,7 @@ function Header() {
     return (
         <header className="header">
             <motion.div 
-                className={`header__burger ${open ? "active" : ""}`}
+                className="header__burger"
                 onClick={handleMenuClick}
                 variants={burgerVariants}
                 animate={open ? "click" : "initial"}
@@ -79,8 +79,16 @@ function Header() {
                     }}
                 >   
                     {open 
-                        ? <img src={menu2} alt="Bouton du menu" height={35}/>
-                        : <img src={menu} alt="Bouton du menu" height={35}/>
+                        ? <motion.img 
+                            src={menu2} 
+                            alt="Bouton du menu" 
+                            height={35}
+                        />
+                        : <motion.img 
+                            src={menu} 
+                            alt="Bouton du menu" 
+                            height={35}
+                        />
                     }
                 </motion.a>
             </motion.div>

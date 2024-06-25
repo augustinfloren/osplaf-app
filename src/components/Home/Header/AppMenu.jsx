@@ -1,11 +1,13 @@
 import { delay, motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
-import Link from "./Link"
+import { useEffect, useRef, useState } from "react";
+import Link from "./Link";
+import { useRefs } from '../RefContext';
 
 const links = [
     {
         id: "link-acheter",
         href: "#hero",
+        section: "hero",
         name: "Acheter",
     },
     {
@@ -26,14 +28,14 @@ const links = [
 ]
 
 function AppMenu({open, setOpen}) {
+    const [activeAnchor, setActiveAnchor] = useState('');
     const control = useAnimation();
     const containerVariants = {
         show: { 
             translateX: 0,
             transition: { 
-                type: "spring", 
-                duration: 0.7, 
-                bounce: 0.2,
+                ease: "easeOut",
+                duration: 0.3, 
                 staggerChildren: 0.05,
                 delayChildren: 0.2,
             },
@@ -44,9 +46,8 @@ function AppMenu({open, setOpen}) {
             translateX: -1000, 
             transition: {
                 delay: 0.2,
-                type: "spring", 
-                duration: 2, 
-                bounce: 0.5,
+                ease: "easeIn", 
+                duration: 0.3, 
                 staggerChildren: 0.05, 
                 staggerDirection: -1
             },
@@ -54,21 +55,33 @@ function AppMenu({open, setOpen}) {
                 display: "none",
             },
         },
-    }
+    };
     const childrenVariants = {
         hidden: { 
             opacity: 0,
             scale: 0,
-            transition: {
-                // duration: 2,
-                // delay: 0.2,
-            },
         },
         show: { 
             opacity: 1,
             scale: 1,
         }
-    }
+    };
+    const { sectionInView, sectionRef } = useRefs();
+
+    const [linkStyle, setLinkStyle] = useState({});
+
+    useEffect(() => {
+        if (sectionInView) {
+            console.log(sectionRef.current.id)
+            setLinkStyle({
+                textDecoration: "underline"
+            })
+        } else {
+            setLinkStyle({
+                textDecoration: "none"
+            })
+        }
+    }, [sectionInView]);
 
     useEffect(() => {
         if (open) {
@@ -98,6 +111,9 @@ function AppMenu({open, setOpen}) {
                     <Link 
                         link={link}
                         index={i}
+                        activeAnchor={activeAnchor} 
+                        setActiveAnchor={setActiveAnchor}
+                        customStyle={link.section === sectionRef.current.id ? linkStyle : ""}
                     />
                 </motion.div>
             ))}

@@ -20,10 +20,11 @@ function Hexa() {
         opacity: 0,
       },
       show: {
-        opacity: 1,
+        opacity: [1,1,0],
         transition: {
-          staggerChildren: 0.2,
-        }
+          duration: 3,
+          staggerChildren: 0.3,
+        },
       }
     };
   
