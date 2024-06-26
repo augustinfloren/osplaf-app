@@ -1,8 +1,5 @@
 import Hexa from './Hexa';
-import { useEffect } from 'react';
 import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
-import { useRefs } from '../../RefContext';
 
 import BuyBtn from './BuyBtn';
 import './Hero.scss'

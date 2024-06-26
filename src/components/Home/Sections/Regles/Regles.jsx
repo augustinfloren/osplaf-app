@@ -1,6 +1,7 @@
 import './Regles.scss';
 import 'animate.css';
 import Dropdown from './Dropdown';
+import { motion } from "framer-motion";
 
 const rules = [
     {
@@ -49,7 +50,29 @@ function Regles() {
                 ))}
                 </div>
                 
-                <a className="regles__content__download" href='#'>Télécharger les fiches enquêtes</a>
+                <motion.a 
+                    className="regles__content__download" 
+                    href='#'
+                    whileHover={{ 
+                        scale: 0.9, 
+                        backgroundColor: "#FFE5E5",
+                        color: "#5637BF",
+                        boxShadow: "0px 0px 20px #5737bf6e",
+                        fontWeight: 600,
+                        transition: {
+                          backgroundColor: { duration: 0.3 },
+                          color: { duration: 0.3 },
+                          boxShadow: { duration: 0.3 },
+                          fontWeight: { duration: 0.3 },
+                          scale: { type: 'spring', stiffness: 1000, damping: 50, bounce: 5 }
+                        }
+                      }}
+                    whileTap={{ 
+                        scale: [0.9, 1.2, 0.9], 
+                    }}
+                >
+                    Télécharger les fiches enquêtes
+                </motion.a>
             </div>
         </section>
     );
