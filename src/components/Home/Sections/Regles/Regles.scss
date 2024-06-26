@@ -63,7 +63,6 @@
             background-color: v.$light-pink;
             color: v.$light-purple;
             
-            opacity: 1;
             transition: opacity 0.3s ease;
 
             &.close:hover {
@@ -96,13 +95,6 @@
                 position: relative;
                 flex-direction: column;
                 gap: 1vw;
-
-                opacity: 0;
-                transition: opacity 0.5s ease;
-
-                &.show {
-                    opacity: 1;
-                }
 
                 .description-list {
                     display: flex;
