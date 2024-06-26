@@ -1,6 +1,3 @@
-import { useState, useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
-
 import { RefProvider } from './RefContext';
 
 import './Home.scss';
@@ -14,16 +11,14 @@ import Footer from './Footer/Footer'
 
 function Home() {
   return (
-    <RefProvider>
-      <div className='container'> 
-        <Header />
-        <Hero />
-        <LeJeu />
-        <Regles />
-        <Contact />
-        <Footer />
-      </div>
-    </RefProvider>
+    <div className='container'> 
+      <Header />
+      <Hero />
+      <LeJeu />
+      <Regles />
+      <Contact />
+      <Footer />
+    </div>
   );
 };
 

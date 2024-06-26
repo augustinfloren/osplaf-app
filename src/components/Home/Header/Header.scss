@@ -66,14 +66,15 @@
 
 
         a {
+            cursor: pointer;
             display: block;
             font-weight: 700;
             font-size: clamp(4.209rem, 3.77276rem + 1.148vw, 5.61rem);
             opacity: 1;
+        }
 
-            &.active-link {
-                text-decoration: underline;
-            }
+        .active {
+            text-decoration: underline;
         }
     }
 }

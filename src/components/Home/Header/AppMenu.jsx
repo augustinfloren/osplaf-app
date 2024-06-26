@@ -1,7 +1,7 @@
-import { delay, motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Link from "./Link";
-import { useRefs } from '../RefContext';
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+// import Link from "./Link";
+import { Link } from "react-scroll";
 
 const links = [
     {
@@ -13,22 +13,24 @@ const links = [
     {
         id: "link-lejeu",
         href: "#lejeu",
+        section: "lejeu",
         name: "Le jeu",
     },
     {
         id: "link-regles",
         href: "#regles",
+        section: "regles",
         name: "Les règles"
     },
     {
         id: "link-contact",
         href: "#contact",
+        section: "contact",
         name: "Contact",
     }
 ]
 
 function AppMenu({open, setOpen}) {
-    const [activeAnchor, setActiveAnchor] = useState('');
     const control = useAnimation();
     const containerVariants = {
         show: { 
@@ -66,22 +68,6 @@ function AppMenu({open, setOpen}) {
             scale: 1,
         }
     };
-    const { sectionInView, sectionRef } = useRefs();
-
-    const [linkStyle, setLinkStyle] = useState({});
-
-    useEffect(() => {
-        if (sectionInView) {
-            console.log(sectionRef.current.id)
-            setLinkStyle({
-                textDecoration: "underline"
-            })
-        } else {
-            setLinkStyle({
-                textDecoration: "none"
-            })
-        }
-    }, [sectionInView]);
 
     useEffect(() => {
         if (open) {
@@ -105,16 +91,32 @@ function AppMenu({open, setOpen}) {
             {links.map((link, i) => (
                 <motion.div
                     key={link.id}
-                    onClick={handleClickedLinks}
                     variants={childrenVariants}
                 >
-                    <Link 
-                        link={link}
-                        index={i}
-                        activeAnchor={activeAnchor} 
-                        setActiveAnchor={setActiveAnchor}
-                        customStyle={link.section === sectionRef.current.id ? linkStyle : ""}
-                    />
+                    <motion.div
+                        whileHover={{
+                            scale: 0.8, 
+                            rotate: i % 2 === 0 ? -5 : 5,
+                            transition: {
+                                rotate: {
+                                    duration: 0.3,
+                                    type: "spring",
+                                    bounce: 0.3
+                                }
+                            }
+                        }}
+                        whileTap={{ 
+                            scale: [0.9, 1.2, 0.9], 
+                        }}
+                    >
+                        <Link
+                            onClick={handleClickedLinks}
+                            activeClass="active"
+                            smooth spy to={link.section}
+                        >
+                            {link.name}
+                        </Link>
+                    </motion.div>
                 </motion.div>
             ))}
         </motion.nav>
