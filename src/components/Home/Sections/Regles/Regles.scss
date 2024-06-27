@@ -91,7 +91,7 @@
             &-steps {
                 cursor: default;
                 
-                display: flex;
+                display: none;
                 position: relative;
                 flex-direction: column;
                 gap: 1vw;
@@ -151,14 +151,6 @@
 
             color: v.$light-pink;
             background-color: v.$light-purple;
-
-            transition: all 0.1s ease;
-
-            &:hover {
-                font-weight: 600;
-                color: v.$light-purple;
-                background-color: v.$light-pink;
-            }
         }
     }
 }

@@ -50,6 +50,7 @@ function BuyBtn() {
             whileHover={{ 
                 scale: 0.9, 
                 backgroundColor: "#FFE5E5",
+                boxShadow: "0px 0px 20px #5637BF",
                 color: "#5637BF",
                 fontWeight: 600,
                 transition: {

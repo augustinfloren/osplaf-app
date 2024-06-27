@@ -49,6 +49,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1vw;
+                justify-content: center;
                 
                 margin-top: 2.2rem;
 
@@ -56,7 +57,7 @@
                     border-radius: 100px;
                 }
                 
-                input, &__message {
+                input, &__message div {
                     padding: 1.5rem 3.8rem;
                     
                     outline: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
@@ -64,6 +65,10 @@
                     outline-offset: -4px;
                     color: v.$light-pink;
                     background: none;
+                }
+
+                input {
+                    width: 100%;
                 }
 
                 &__name, &__mail {
@@ -75,23 +80,58 @@
                 }
 
                 &__message {
-                    height: 20rem;
-                    border-radius: 40px;
-
-                    & textarea {
-                        width: 100%;
-                        height: 100%;
+                    div {
+                        height: 20rem;
+                        border-radius: 40px;
                         
-                        resize: none;
-                        outline: none;
-
-                        background: none;
-                        border: none;
-
-                        color: v.$light-pink;
-                        scrollbar-color:  v.$light-purple rgba(0, 0, 255, 0);
-                        scrollbar-width: thin;
+                        & textarea {
+                            width: 100%;
+                            height: 100%;
+                            
+                            resize: none;
+                            outline: none;
+    
+                            background: none;
+                            border: none;
+    
+                            color: v.$light-pink;
+                            scrollbar-color:  v.$light-purple rgba(0, 0, 255, 0);
+                            scrollbar-width: thin;
+                        }
                     }
+                }
+                &__submit-btn {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    
+                    margin-top: 1rem;
+
+                    button {
+                        cursor: pointer;
+                        padding: 1.5rem 3.8rem;
+                        border-radius: 40px;
+                        
+                        font-size: clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
+                        font-weight: 500;
+    
+                        color: v.$light-purple;
+                        background-color: v.$light-pink;
+    
+                        border: none;
+                    }
+                }   
+                span, .alert-success, .alert-danger  {
+                    display: block;
+                    padding-left: 3.8rem;
+                    font-size: clamp(1.7rem, 0.95072rem + 0.656vw, 2rem);
+                    color: v.$light-purple;
+                }
+                .alert-success, .alert-danger  {
+                    padding-left: 0;
+                }
+                .alert-danger {
+                    color: rgb(255, 41, 41);
                 }
             }
         }
@@ -151,6 +191,17 @@
 
             a img {
                 width: clamp(6rem, 10vw, 10rem);
+
+                transform: scale(1);
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+
+                &:active {
+                    transform: scale(1.5);
+                }
             }
         }
     }

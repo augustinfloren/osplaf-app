@@ -57,16 +57,12 @@ function Regles() {
                         scale: 0.9, 
                         backgroundColor: "#FFE5E5",
                         color: "#5637BF",
-                        boxShadow: "0px 0px 20px #5737bf6e",
                         fontWeight: 600,
                         transition: {
-                          backgroundColor: { duration: 0.3 },
-                          color: { duration: 0.3 },
-                          boxShadow: { duration: 0.3 },
-                          fontWeight: { duration: 0.3 },
-                          scale: { type: 'spring', stiffness: 1000, damping: 50, bounce: 5 }
+                            duration: 0.3,
+                            scale: { type: 'spring', stiffness: 1000, damping: 50, bounce: 5 }
                         }
-                      }}
+                    }}
                     whileTap={{ 
                         scale: [0.9, 1.2, 0.9], 
                     }}
