@@ -1,0 +1,25 @@
+@use "../../styles/variables" as v;
+@import "../../styles/mixins";
+
+.cgv-container {
+    background-color: v.$light-pink;
+}
+
+#cgv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
+    @include border-radius(v.$box-radius);
+    background-color: v.$dark-purple;
+    color: v.$light-pink;
+
+    h3 {
+        margin-top: 2rem;
+    }
+
+    @include respond-to(large) {
+        padding-left: v.$pad-l;
+        padding-right: v.$pad-l;
+    }
+}

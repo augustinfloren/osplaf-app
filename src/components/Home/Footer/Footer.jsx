@@ -4,11 +4,11 @@ function Footer() {
     return (
         <footer className='footer'>
             <ul>
-                <a href="">
+                <a href="/mentions-legales">
                     <li>• Mentions légales</li>
                 </a>
                 
-                <a href="">
+                <a href="/cgv">
                     <li>• CGV</li>
                 </a>
             </ul>
