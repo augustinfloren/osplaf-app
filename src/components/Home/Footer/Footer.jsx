@@ -1,16 +1,17 @@
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 function Footer() {
     return (
         <footer className='footer'>
             <ul>
-                <a href="/mentions-legales">
+                <Link to="/mentions-legales">
                     <li>• Mentions légales</li>
-                </a>
+                </Link>
                 
-                <a href="/cgv">
+                <Link to="/cgv">
                     <li>• CGV</li>
-                </a>
+                </Link>
             </ul>
 
             <p>© Où sont passées les artistes femmes < br/> 2024</p>

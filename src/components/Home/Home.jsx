@@ -1,5 +1,3 @@
-import { RefProvider } from './RefContext';
-
 import './Home.scss';
 
 import Header from './Header/Header';

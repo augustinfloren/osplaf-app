@@ -52,7 +52,8 @@ function Regles() {
                 
                 <motion.a 
                     className="regles__content__download" 
-                    href='#'
+                    href='./src/assets/Fiches-enquetes_OSPLAF_x30.pdf'
+                    download="Fiches-enquetes_OSPLAF_x30.pdf"
                     whileHover={{ 
                         scale: 0.9, 
                         backgroundColor: "#FFE5E5",

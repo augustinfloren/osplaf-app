@@ -16,6 +16,15 @@
     color: v.$light-purple;
     background-color: v.$light-pink;
 
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            align-self: flex-start;
+        }
+    }
+
     li {
         font-weight: 700;
     }
