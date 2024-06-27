@@ -4,6 +4,7 @@ import arrow4 from '../../../../assets/icons/osplaf-arrow4.png';
 import portrait from '../../../../assets/portrait.png';
 import { fb, insta, ulule } from '../../../../assets/index';
 
+import ContactForm from "./ContactForm";
 import './Contact.scss'
 
 function Contact() {
@@ -14,18 +15,9 @@ function Contact() {
                 <div className="contact-content__form" id="contact">
                     <img src={arrow3} alt="flêche" className='arrow3'/>
                     <h2>Contact</h2>
-
-                    <form className='contact-form'>
-                        <input className='contact-form__name' placeholder='Nom'></input>
-                        <input className='contact-form__mail' placeholder='Mail'></input>
-                        <input className='contact-form__objet' placeholder='Objet'></input>
-                        <div className='contact-form__message'>
-                            <textarea placeholder='Message'></textarea>
-                        </div>
-                    </form>
+                    <ContactForm />
                 </div>
                 <div className="contact-content__bio">
-                    <img className="arrow4" src={arrow4} alt="flèche" />
                     <div className='bio-img'>
                         <img src={portrait} alt="portrait de Sibylle Dubocq" />
                     </div>

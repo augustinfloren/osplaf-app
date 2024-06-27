@@ -1,6 +1,6 @@
 import Client from "shopify-buy";
 import { useState, useEffect } from "react";
-import { NavLink } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 let client = Client.buildClient({
     domain: '4232cb-95.myshopify.com',
@@ -25,7 +25,8 @@ function BuyBtn() {
         });
     }, []);
 
-    const handleBuy = (variantId) => {
+    function handleBuy(variantId) {
+        // setClicked(true);
         if (!checkout) return;
 
         const lineItemsToAdd = [
@@ -44,14 +45,29 @@ function BuyBtn() {
     };
 
     return (
-        <div>
-            <NavLink 
-                className="buy-button"
-                onClick={() => handleBuy(products[0].variants[0].id)}>
-                    Acheter le jeu
-            </NavLink>
-
-        </div>
+        <motion.a 
+            className="buy-button"
+            whileHover={{ 
+                scale: 0.9, 
+                backgroundColor: "#FFE5E5",
+                boxShadow: "0px 0px 20px #5637BF",
+                color: "#5637BF",
+                fontWeight: 600,
+                transition: {
+                  backgroundColor: { duration: 0.3 },
+                  color: { duration: 0.3 },
+                  boxShadow: { duration: 0.3 },
+                  fontWeight: { duration: 0.3 },
+                  scale: { type: 'spring', stiffness: 1000, damping: 50, bounce: 5 }
+                }
+              }}
+            whileTap={{ 
+                scale: [0.9, 1.2, 0.9], 
+            }}
+            onClick={() => handleBuy(products[0].variants[0].id)}
+        >
+                Acheter le jeu
+        </motion.a>
     );
 }
 

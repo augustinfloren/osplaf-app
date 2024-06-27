@@ -1,21 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import './Regles.scss';
 import dropdownIcon from '../../../../assets/icons/osplaf-dropdown.png';
+import { delay, motion, transform, useAnimation } from "framer-motion";
 
 function Dropdown(rule) {
-
+    const control = useAnimation();
     const content = rule.content;
     const [open, setOpen] = useState(false);
-    const [showSteps, setShowSteps] = useState(false);
     const contentRef = useRef(null);
 
     const openPhaseContainer = (event) => {
-        if (event.target === event.currentTarget) {
-            setOpen(!open);
-        }
-    }
-
-    const openChildPhaseContainer = (event) => {
         if (event.target === event.currentTarget) {
             setOpen(!open);
             event.stopPropagation();
@@ -24,39 +18,105 @@ function Dropdown(rule) {
 
     useEffect(() => {
         if (open) {
-            const timeoutId = setTimeout(() => {
-                setShowSteps(true);
-            }, 100);
-
-            return () => clearTimeout(timeoutId);
+            control.start("show");
         } else {
-            setShowSteps(false);
+            control.start("hidden");
         }
-    }, [open]); 
+    }, [control, open]);
+
+    const stepsContainerVariants = {
+        show: {
+            opacity: 1,
+            display: "flex",
+            transition: {
+                duration: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            transition: {
+                delay: 0.1,
+                duration: 0.3,
+                staggerChildren: 0.1,
+                staggerDirection: -1
+            },
+            transitionEnd: {
+                display: "none"
+            }
+        }
+    }
+
+    const stepsVariants = {
+        show: {
+            scale: 1,
+            opacity: 1,
+            transition: {
+                duration: 0.2,
+                ease: "easeInOut"
+            }
+        },
+        hidden: {
+            scale: 0.5,
+            opacity: 0,
+            transition: {
+                ease: "easeIn"
+            }
+        }
+    }
+
+    function activateHover() {
+        if (open) {
+            return ({
+                scale: 1,
+                marginTop: "0.5rem",
+                marginBottom: "0.5rem",
+            })
+        } else {
+            return ({
+                scale: 1.02,
+                marginTop: "0.5rem",
+                marginBottom: "0.5rem",
+            })
+        }
+    }
 
     return (
-        <div className={`regles__content__phase ${open ? "open" : ""}`}
+        <motion.div 
+            className={`regles__content__phase`}
             key={`regles__content__${content.name}`}
             onClick={openPhaseContainer}
-            ref={contentRef} 
+            ref={contentRef}
+            whileHover={activateHover}
         >
 
-            <div className="regles__content__phase-title"  onClick={openChildPhaseContainer}>
-                <h3 onClick={openChildPhaseContainer} >{content.name}</h3>
+            <div 
+                className="regles__content__phase-title" 
+                onClick={openPhaseContainer}
+            >
+                <h3 onClick={openPhaseContainer}>{content.name}</h3>
 
-                <img className={`regles__content__phase-title__dropdown ${open ? "open" : ""}`} src={dropdownIcon} alt="Menu déroulant" onClick={openChildPhaseContainer} ref={contentRef} />
+                <img 
+                    className={`regles__content__phase-title__dropdown ${open ? "open" : ""}`} 
+                    src={dropdownIcon} alt="Menu déroulant" 
+                    onClick={openPhaseContainer} 
+                    ref={contentRef} 
+
+                />
             </div>
 
-            {open &&
-                <div className={`regles__content__phase-steps ${showSteps ? "show" : ""}`} > 
-                    {(Array.isArray(content.description)
-                        ? content.description.map((step, index) => ( <div className='description-list' key={`${step}-${index}`}><div className='number'><h3>{index + 1}</h3></div><p>{step}</p></div>))
-                        : <p className='description-single'>{content.description}</p>
-                    )}
-                </div>
-            }
+            <motion.div 
+                className={`regles__content__phase-steps`} 
+                variants={stepsContainerVariants}
+                animate={control}
+            > 
+                {(Array.isArray(content.description)
+                    ? content.description.map((step, index) => ( <motion.div className='description-list' key={`${step}-${index}`} variants={stepsVariants}><div className='number'><h3>{index + 1}</h3></div><p>{step}</p></motion.div>))
+                    : <p className='description-single'>{content.description}</p>
+                )}
+            </motion.div>
             
-        </div>
+        </motion.div>
     )
 }
 

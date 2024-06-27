@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import ScrollReveal from "../Animations/ScrollReveal";
+import {motion} from "framer-motion";
 import './ContentSlider.scss';
 import 'animate.css';
 import sliderNavLeft from '../../../assets/icons/slider-nav-arrow-left.png';
@@ -36,9 +38,29 @@ const images = [
     url: image4
   }
 ];
+
+const sliderVariants = {
+  hidden: {
+    opacity: 0,
+    translateX : 50,
+  },
+  visible: {
+    opacity: 1,
+    translateX: 0,
+    transition: {
+      duration: 0.5
+    }
+  },
+  
+}
   
 function ContentSlider() {
+    const [clickOnSlide, setClickOnSlide] = useState(false);
     const swiperRef = useRef(null);
+
+    function handleClickedSlide() {
+      setClickOnSlide(!clickOnSlide);
+    }
 
     function handlePrev() {
       const swiperEl = swiperRef.current;
@@ -51,7 +73,10 @@ function ContentSlider() {
     }
 
   return (
-    <div className='content-slider'>
+    <ScrollReveal 
+      customClass='content-slider'
+      variants={sliderVariants}
+    >
       <swiper-container
         ref={swiperRef}
         slidesPerView="1"
@@ -74,10 +99,17 @@ function ContentSlider() {
         }
       >
         {images.map((image, index) => (
-          <swiper-slide key={image.id} class="content-slide">
-            <div className='img-container' data-swiper-parallax="0">
+          <swiper-slide 
+            key={image.id} 
+            class={`content-slide`}
+            onClick={() => handleClickedSlide()}
+          >
+            <motion.div 
+              className='img-container' 
+              data-swiper-parallax="0"
+            >
               <img src={image.url} alt={image.name} data-swiper-parallax="-100"/>
-            </div>
+            </motion.div>
           </swiper-slide>
         ))}
       </swiper-container>
@@ -85,15 +117,49 @@ function ContentSlider() {
         className="swiper-button-prev"
         onClick={handlePrev}
       >
-        <img src={sliderNavLeft} alt="Previous" />
+        <motion.img 
+          src={sliderNavLeft} 
+          alt="Previous" 
+          whileHover={{
+            scale: 1.5,
+            transition: {
+              type: "spring", 
+              bounce: 0.6
+          }
+          }}
+          whileTap={{
+            scale: 1, 
+            transition: {
+                type: "spring", 
+                bounce: 0.5
+            }
+          }}
+        />
       </div>
       <div 
         className="swiper-button-next"
         onClick={handleNext}
       >
-        <img src={sliderNavRight} alt="Next" />
+        <motion.img 
+          src={sliderNavRight} 
+          alt="Next" 
+          whileHover={{
+            scale: 1.5,
+            transition: {
+              type: "spring", 
+              bounce: 0.6
+          }
+          }}
+          whileTap={{
+            scale: 1, 
+            transition: {
+                type: "spring", 
+                bounce: 0.5
+            }
+          }}
+        />
       </div>
-    </div>
+    </ScrollReveal>
   );
 }
 

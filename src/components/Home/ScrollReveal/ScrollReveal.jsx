@@ -3,12 +3,14 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 function ScrollReveal({
+    elementType,
     children,
     variants,
     customClass
 }) {
     const control = useAnimation();
     const [ref, inView] = useInView();
+    const MotionElement = motion[elementType]
 
     useEffect(() => {
         if (inView) {
@@ -19,7 +21,7 @@ function ScrollReveal({
     }, [control, inView]);
 
     return (
-        <motion.div
+        <MotionElement
             ref={ref}
             className={customClass}
             variants={variants}
@@ -27,7 +29,7 @@ function ScrollReveal({
             animate={control}
         >
             {children}
-        </motion.div>
+        </MotionElement>
     )
 }
 

@@ -8,9 +8,9 @@ function Artist(props) {
             opacity: 1, 
             scale: 1, 
             transition: { 
-                duration: 0.5, 
+                duration: 0.7, 
                 type: "spring",
-                bounce: 0.25
+                bounce: 0.7
             } },
         hidden: { 
             mixBlendMode: "plus-lighter", 
@@ -20,6 +20,7 @@ function Artist(props) {
 
     return (
         <ScrollReveal
+            elementType="div"
             customClass="artist"
             variants={boxVariant}
         >
