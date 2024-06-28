@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import arrow from "../assets/icons/osplaf-arrow3.png"
-import {motion, transform} from "framer-motion";
+import arrow from "../assets/icons/osplaf-arrow3.png";
 import "./ReturnHome.scss";
 
 function ReturnHome() {
@@ -9,11 +8,11 @@ function ReturnHome() {
             to="/"
             className="return"
         >
-        <img 
-            src={arrow} 
-            alt="flêche de retour à l'accueil" 
-        />
-    </Link>
+            <img 
+                src={arrow} 
+                alt="flêche de retour à l'accueil" 
+            />  
+        </Link>
     )
 }
 

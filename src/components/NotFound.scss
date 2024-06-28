@@ -1,0 +1,26 @@
+@use "../styles/variables" as v;
+@import "../styles/mixins";
+
+.notfound-container {
+    height: 100vh;
+    background-color: v.$light-pink;
+}
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: v.$top-pad v.$pad v.$bottom-pad v.$pad;
+    @include border-radius(v.$box-radius);
+    background-color: v.$dark-purple;
+    color: v.$light-pink;
+
+    h3 {
+        margin-top: 2rem;
+    }
+
+    @include respond-to(large) {
+        padding-left: v.$pad-l;
+        padding-right: v.$pad-l;
+    }
+}

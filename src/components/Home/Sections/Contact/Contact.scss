@@ -67,6 +67,12 @@
                     background: none;
                 }
 
+                input::placeholder, 
+                textarea::placeholder {
+                    color: v.$light-purple; 
+                    opacity: 0.8;  
+                }
+
                 input {
                     width: 100%;
                 }

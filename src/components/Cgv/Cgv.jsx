@@ -1,10 +1,25 @@
 import ReturnHome from "../ReturnHome";
 import "./Cgv.scss";
-import Footer from "../Home/Footer/Footer"
+import Footer from "../Home/Footer/Footer";
+import { motion } from "framer-motion";
+import LoadingContext from "../Home/Loading/LoadingContext";
+import { useContext } from "react";
 
 function Cgv() {
+    const { setHasLoaded } = useContext(LoadingContext);
+    setHasLoaded(true);
+
     return (
-        <div className="cgv-container">
+        <motion.div 
+            className="cgv-container"
+            initial={{opacity: 0}}
+            animate={{
+                opacity: 1
+            }}
+            transition={{
+                ease: "easeIn"
+            }}
+        >
             <section id="cgv">
                 <ReturnHome />
                 <h2>Conditions Générales de Vente (CGV)</h2>
@@ -57,7 +72,7 @@ function Cgv() {
                 </p>
             </section>
             <Footer/>
-        </div>
+        </motion.div>
     )
 }
 

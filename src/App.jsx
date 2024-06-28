@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import Home from './components/Home/Home';
 import Cgv from './components/Cgv/Cgv';
 import MentionsLegales from './components/MentionsLegales/MentionsLegales';
+import NotFound from './components/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/cgv" element={<Cgv/>} />
           <Route exact path="/mentions-legales" element={<MentionsLegales/>} />
+          <Route exact path="*" element={<NotFound />} />
         </Routes>
       </LoadingProvider>
     </Router>
