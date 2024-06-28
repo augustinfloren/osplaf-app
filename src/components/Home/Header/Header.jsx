@@ -110,7 +110,7 @@ function Header(props) {
                     }}
                     transition={{
                         ease:"easeInOut",
-                        duration: 0.8,
+                        duration: 0.5,
                     }}
                 />
             </motion.div>

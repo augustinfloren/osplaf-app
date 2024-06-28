@@ -1,10 +1,25 @@
 import ReturnHome from "../ReturnHome";
 import "./MentionsLegales.scss";
-import Footer from "../Home/Footer/Footer"
+import Footer from "../Home/Footer/Footer";
+import { motion } from "framer-motion";
+import LoadingContext from "../Home/Loading/LoadingContext";
+import { useContext } from "react";
 
 function Cgv() {
+    const { setHasLoaded } = useContext(LoadingContext);
+    setHasLoaded(true);
+
     return (
-        <div className="legal-container">
+        <motion.div 
+            className="legal-container"
+            initial={{opacity: 0}}
+            animate={{
+                opacity: 1
+            }}
+            transition={{
+                ease: "easeIn"
+            }}
+        >
             <section id="legal">
                 <ReturnHome />
                 <h2>Mentions Légales</h2>
@@ -36,7 +51,7 @@ function Cgv() {
                 </p>
             </section>
             <Footer/>
-        </div>
+        </motion.div>
     )
 }
 
