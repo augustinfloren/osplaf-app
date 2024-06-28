@@ -6,7 +6,7 @@ import './Hero.scss'
 import 'animate.css';
 import box from '../../../../assets/game-content/osplaf-box.png'
 
-function Hero() {
+function Hero(props) {
     return (
         <section 
             className='hero' 
@@ -23,6 +23,10 @@ function Hero() {
                         className="box"
                         src={box} 
                         alt="Boîte du jeu" 
+                        initial={{scale: 0.8}}
+                        animate={props.hasLoaded && {
+                            scale: 1,
+                        }}
                         whileHover={{
                             scale: 1.05,
                         }}

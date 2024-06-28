@@ -8,7 +8,7 @@ import {
     logo2
 } from '../../../assets/index.js';
 
-function Header() {
+function Header(props) {
     const [open, setOpen] = useState(false);
 
     const burgerVariants = {
@@ -95,7 +95,25 @@ function Header() {
             
             <AppMenu open={open} setOpen={setOpen} />
 
-            <img className="header-title" src={logo2} alt="Logo de : Où sont passées les artistes femmes"/>
+            <motion.div className="title-container">
+                <motion.img 
+                    className="header-title" 
+                    src={logo2} 
+                    alt="Logo de : Où sont passées les artistes femmes"
+                    initial={{
+                        opacity: 0,
+                        scale: 2
+                    }}
+                    animate={props.hasLoaded && {
+                        opacity: 1,
+                        scale: 1
+                    }}
+                    transition={{
+                        ease:"easeInOut",
+                        duration: 0.8,
+                    }}
+                />
+            </motion.div>
         </header>
     );
 }

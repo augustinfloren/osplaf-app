@@ -27,7 +27,7 @@ function Cgv() {
                         Forme juridique : Association
                     </li>
                     <li>
-                        Adresse du siège social : 16 RUE FARJON 13001 MARSEILLE
+                        Adresse du siège social : 13001 MARSEILLE
                     </li>
                 </ul>
                 <h3>Litiges</h3>
