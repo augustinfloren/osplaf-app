@@ -27,11 +27,14 @@
         }
     }
 
-    &-title {
+    .title-container {
         position: absolute;
+        display: flex;
+        justify-content: center;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
         width: clamp(30rem, 35vw, 60rem);
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%); 
         margin-top: 10rem;
 
         @include respond-to(medium) {
@@ -41,7 +44,10 @@
         @include respond-to(small-height) {
             margin-top: 15vh;
         }
+    }
 
+    &-title {
+        // position: ;
     }
 
     .header-nav {

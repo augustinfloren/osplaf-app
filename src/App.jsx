@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { LoadingProvider } from './components/Home/Loading/LoadingContext';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 
 import Home from './components/Home/Home';
@@ -18,12 +19,14 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/cgv" element={<Cgv/>} />
-        <Route exact path="/mentions-legales" element={<MentionsLegales/>} />
-      </Routes>
+      <LoadingProvider>
+        <ScrollToTop />
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/cgv" element={<Cgv/>} />
+          <Route exact path="/mentions-legales" element={<MentionsLegales/>} />
+        </Routes>
+      </LoadingProvider>
     </Router>
   );
 }
