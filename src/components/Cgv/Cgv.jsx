@@ -10,7 +10,7 @@ function Cgv() {
                 <h2>Conditions Générales de Vente (CGV)</h2>
                 <h3>Préambule</h3>
                 <p>
-                Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre, d'une part, la société "Où sont passées les artistes femmes", dont le siège social est situé à [Adresse de l'entreprise], immatriculée au Registre du Commerce et des Sociétés sous le numéro [Numéro RCS], TVA intracommunautaire [Numéro de TVA], ci-après dénommée "le Vendeur", et d'autre part, toute personne physique ou morale souhaitant procéder à un achat via le site internet "Où sont passées les artistes femmes", ci-après dénommée "l'Acheteur".
+                Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre, d'une part, l'association Phanéro , dont le siège social est situé à Marseille, immatriculée sous le numéro de SIRET 92329327800019, ci-après dénommée "le Vendeur", et d'autre part, toute personne physique ou morale souhaitant procéder à un achat via le site internet www.lesartistesfemmes.fr, ci-après dénommée "l'Acheteur".
                 </p>
                 <h3>1. Objet</h3>
                 <p>
@@ -22,7 +22,7 @@ function Cgv() {
                 </p>
                 <h3>3. Commande</h3>
                 <p>
-                L'Acheteur passe commande sur le site internet "Où sont passées les artistes femmes". Pour que la commande soit validée, l'Acheteur devra accepter les présentes CGV en cochant la case prévue à cet effet. La commande sera confirmée par e-mail.
+                L'Acheteur passe commande sur le site internet www.lesartistesfemmes.fr. Pour que la commande soit validée, l'Acheteur devra accepter les présentes CGV en cochant la case prévue à cet effet. La commande sera confirmée par e-mail.
                 </p>
                 <h3>4. Prix</h3>
                 <p>Les prix sont indiqués en euros (€) et toutes taxes comprises (TTC). Le Vendeur se réserve le droit de modifier ses prix à tout moment, mais s'engage à appliquer les tarifs en vigueur indiqués au moment de la commande.
@@ -33,7 +33,7 @@ function Cgv() {
                 </p>
                 <h3>6. Livraison</h3>
                 <p>
-                Les produits sont livrés à l'adresse de livraison indiquée lors de la commande. Les frais de livraison sont [mentionner les frais ou indiquer qu'ils sont inclus dans le prix]. Les délais de livraison sont de [indiquer les délais, par exemple, 3 à 7 jours ouvrés]. En cas de retard de livraison, l'Acheteur en sera informé par e-mail.
+                Les produits sont livrés à l'adresse de livraison indiquée lors de la commande. Les frais de livraison sont à la charge de l'acheteur.  
                 </p>
                 <h3>7. Droit de rétractation</h3>
                 <p>
@@ -49,7 +49,7 @@ function Cgv() {
                 </p>
                 <h3>10. Service après-vente</h3>
                 <p>
-                Pour toute question ou réclamation, l'Acheteur peut contacter le service après-vente du Vendeur par e-mail à [adresse e-mail] ou par téléphone au [numéro de téléphone].
+                Pour toute question ou réclamation, l'Acheteur peut contacter le service après-vente du Vendeur par e-mail à contact@lesartistesfemmes.fr. 
                 </p>
                 <h3>11. Droit applicable et juridiction compétente</h3>
                 <p>
