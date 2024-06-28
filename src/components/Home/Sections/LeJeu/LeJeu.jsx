@@ -39,7 +39,7 @@ function LeJeu() {
                         En plus de votre activité d’artiste, vous pouvez devenir directrice d’un atelier d’artistes femmes, présidente d’une association de lutte pour les droits des femmes, ou encore rédactrice en chef d’un journal féministe. 
                         </p>
                         <p>
-                        *féminin de «peintre», utilisé jusqu’au XVIIe siècle. 
+                        *féminin de « peintre », utilisé jusqu’au XVII<sup>e</sup> siècle. 
                         </p>
                     </div>
                     <div className="lejeu-content__presentation__img">
