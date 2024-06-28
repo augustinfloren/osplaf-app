@@ -1,7 +1,7 @@
-import './Regles.scss';
-import 'animate.css';
 import Dropdown from './Dropdown';
 import { motion } from "framer-motion";
+import './Regles.scss';
+import sheets from '../../../../assets/Fiches-enquetes_OSPLAF.pdf';
 
 const rules = [
     {
@@ -52,8 +52,8 @@ function Regles() {
                 
                 <motion.a 
                     className="regles__content__download" 
-                    href='./src/assets/Fiches-enquetes_OSPLAF_x30.pdf'
-                    download="Fiches-enquetes_OSPLAF_x30.pdf"
+                    href={sheets}
+                    download="Fiches-enquetes_OSPLAF.pdf"
                     whileHover={{ 
                         scale: 0.9, 
                         backgroundColor: "#FFE5E5",
