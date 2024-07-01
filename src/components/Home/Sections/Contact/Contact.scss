@@ -48,7 +48,7 @@
             .contact-form {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1vw;
+                gap: 2vw;
                 justify-content: center;
                 
                 margin-top: 2.2rem;
@@ -58,11 +58,10 @@
                 }
                 
                 input, &__message div {
-                    padding: 1.5rem 3.8rem;
+                    padding: 1.3rem 3.8rem;
                     
-                    outline: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
-                    border: none;
-                    outline-offset: -4px;
+                    border: clamp(0.25rem, 0.15vw, 0.35rem) solid v.$light-purple;
+                    outline: none;
                     color: v.$light-pink;
                     background: none;
                 }
