@@ -26,10 +26,15 @@ function Home() {
           console.log('Content has loaded3');
         }, 500); 
       };
-  
-      window.addEventListener('load', handleLoad);
+
+      if (document.readyState === 'complete') {
+        console.log("L'event load est rendu avant le montage de home")
+        handleLoad();
+      } else {
+        window.addEventListener('load', handleLoad);
+      };
+      
       document.body.style.overflow = 'hidden';
-  
       return () => {
           window.removeEventListener('load', handleLoad);
           document.body.style.overflow = 'auto';
