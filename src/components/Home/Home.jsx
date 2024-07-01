@@ -19,10 +19,11 @@ function Home() {
     if (!hasLoaded) {
       console.log('Content has loaded1');
       const handleLoad = () => {
+        console.log('Content has loaded2');
         setTimeout(() => {
           document.body.style.overflow = 'auto';
           setHasLoaded(true);
-          console.log('Content has loaded2');
+          console.log('Content has loaded3');
         }, 500); 
       };
   
