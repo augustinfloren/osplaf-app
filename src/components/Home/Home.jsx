@@ -12,15 +12,17 @@ import Contact from './Sections/Contact/Contact';
 import Footer from './Footer/Footer';
 
 function Home() {
+  console.log('Test');
   const { hasLoaded, setHasLoaded } = useContext(LoadingContext);
 
   useEffect(() => {
     if (!hasLoaded) {
+      console.log('Content has loaded1');
       const handleLoad = () => {
         setTimeout(() => {
           document.body.style.overflow = 'auto';
           setHasLoaded(true);
-          console.log('Content has loaded');
+          console.log('Content has loaded2');
         }, 500); 
       };
   
