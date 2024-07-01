@@ -20,6 +20,7 @@ function Home() {
         setTimeout(() => {
           document.body.style.overflow = 'auto';
           setHasLoaded(true);
+          console.log('Content has loaded');
         }, 500); 
       };
   
