@@ -12,23 +12,18 @@ import Contact from './Sections/Contact/Contact';
 import Footer from './Footer/Footer';
 
 function Home() {
-  console.log('Test');
   const { hasLoaded, setHasLoaded } = useContext(LoadingContext);
 
   useEffect(() => {
     if (!hasLoaded) {
-      console.log('Content has loaded1');
       const handleLoad = () => {
-        console.log('Content has loaded2');
         setTimeout(() => {
           document.body.style.overflow = 'auto';
           setHasLoaded(true);
-          console.log('Content has loaded3');
         }, 500); 
       };
 
-      if (document.readyState === 'complete') {
-        console.log("L'event load est rendu avant le montage de home")
+      if (document.readyState === 'complete') { 
         handleLoad();
       } else {
         window.addEventListener('load', handleLoad);
