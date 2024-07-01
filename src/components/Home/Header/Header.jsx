@@ -95,25 +95,13 @@ function Header(props) {
             
             <AppMenu open={open} setOpen={setOpen} />
 
-            <motion.div className="title-container">
-                <motion.img 
+            <div className="title-container">
+                <img 
                     className="header-title" 
                     src={logo2} 
                     alt="Logo de : Où sont passées les artistes femmes"
-                    initial={{
-                        opacity: 0,
-                        scale: 2
-                    }}
-                    animate={props.hasLoaded && {
-                        opacity: 1,
-                        scale: 1
-                    }}
-                    transition={{
-                        ease:"easeInOut",
-                        duration: 0.5,
-                    }}
                 />
-            </motion.div>
+            </div>
         </header>
     );
 }

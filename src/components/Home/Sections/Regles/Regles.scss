@@ -44,9 +44,8 @@
             flex-direction: column;
             gap: v.$title-lh;
             width: 97%;
-            
             border-radius: clamp(30px , 10vw, 70px);
-            padding: 2.1vw v.$box-pad 2.3vw v.$box-pad;
+            padding: 2.3vw v.$box-pad 2.3vw v.$box-pad;
 
             @include respond-to(small) {
                 & {
@@ -73,6 +72,12 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                h3 {
+                    @include respond-to(small) {
+                        font-size: clamp(1.369rem, 2rem + 0.646vw, 3.157rem);
+                    }
+                }
 
                 &__dropdown {
                     width: clamp(2rem, 5vw, 5rem);
@@ -118,10 +123,10 @@
 
                 & > * {
                     border-radius: clamp(30px , 3vw, 40px);
-                    padding: max(3vw, 2rem) min(7vw, 7rem);
                 }
 
                 & > *:nth-child(odd) {
+                    padding: max(3vw, 2rem) min(9vw, 7rem);
                     background-color: v.$light-purple;
                     color: v.$light-pink;
 
@@ -132,6 +137,7 @@
 
                 & > *:nth-child(even) {
                         border: max(0.5vw, 5px) solid v.$light-purple;
+                        padding: max(3vw, 2rem) min(9vw, 6rem);
 
                     .number {
                         color: v.$light-purple;
