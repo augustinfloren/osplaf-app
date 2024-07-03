@@ -67,12 +67,7 @@
                 margin-top: 3rem;
                 height: inherit;
             }
-
-            @include respond-to(small-height) {
-                width: 81vh;
-                min-width: 33rem;
-            }
-
+            
             .box {
                 position: relative;
                 z-index: 2;
