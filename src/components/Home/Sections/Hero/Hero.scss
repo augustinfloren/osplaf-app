@@ -24,6 +24,10 @@
             max-width: 46rem;
             min-width: 30rem;
             margin-top: 10vh;
+
+            @include respond-to(xl) {
+                max-width: 62rem;
+            }
         
             h1 {
                 font-weight: 500;
@@ -56,6 +60,11 @@
             height: 40rem;
             margin-right: -5rem;
             margin-top: 15vh;
+            
+            @include respond-to(small) {
+                margin-top: 3rem;
+                height: inherit;
+            }
 
             @include respond-to(medium) {
                 margin-top: 0rem;
@@ -63,11 +72,11 @@
                 min-width: 30vw;
             }
 
-            @include respond-to(small) {
-                margin-top: 3rem;
-                height: inherit;
+            @include respond-to(xl) {
+                margin-top: 7rem;
+                margin-right: 0;
             }
-            
+
             .box {
                 position: relative;
                 z-index: 2;
