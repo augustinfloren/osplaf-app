@@ -66,7 +66,7 @@ function BuyBtn() {
             }}
             onClick={() => window.open("https://fr.ulule.com/lesartistesfemmes/", "_blank")}
         >
-                Soutenir sur Ulule
+                Participer à la prévente
         </motion.a>
     );
 }
