@@ -14,7 +14,7 @@ function Footer() {
                 </Link>
             </ul>
 
-            <p>© Où sont passées les artistes femmes < br/> 2024</p>
+            <p>© Où sont passées les artistes femmes < br/> 2025</p>
         </footer>
     )
 }
