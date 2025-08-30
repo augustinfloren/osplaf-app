@@ -36,7 +36,7 @@ const artists = [
     {id:"rosa", name: "Rosa Bonheur", src: artiste3, date: "1822-1899"},
     {id:"marie", name: "Marie Bashkirtseff", src: artiste4, date: "1858-1884"},
     {id:"amelie", name: "Amélie Beaury-Saurel", src: artiste5, date: "1848-1924"},
-    {id:"frida", name: "Frida Kahlo", src: artiste6, date: "1593-1653"}
+    {id:"frida", name: "Frida Kahlo", src: artiste6, date: "1907-1954"}
 ]
 
 export { hexa, artists };

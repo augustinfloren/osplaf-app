@@ -64,9 +64,9 @@ function BuyBtn() {
             whileTap={{ 
                 scale: [0.9, 1.2, 0.9], 
             }}
-            onClick={() => handleBuy(products[0].variants[0].id)}
+            onClick={() => window.open("https://fr.ulule.com/lesartistesfemmes/", "_blank")}
         >
-                Acheter le jeu
+                Soutenir sur Ulule
         </motion.a>
     );
 }
