@@ -16,7 +16,7 @@ function LeJeu() {
 
                 <div className="lejeu-content__intro">
                     <h2>Le Jeu</h2>
-                    <p>Les artistes femmes ont longtemps été empêchées d’apprendre et de <br/>pratiquer leur art. Celles qui ont, malgré tout, réussi à devenir artistes ont été progressivement effacées de l’histoire. Pourtant, certaines sont parvenues jusqu’à nous malgré ces obstacles. Ce jeu rend hommage aux tours de force qu’elles ont dû exécuter afin de pouvoir apprendre, créer, exister.
+                    <p>Les artistes femmes ont longtemps été empêchées d’apprendre et de pratiquer leur art. Celles qui ont, malgré tout, réussi à devenir artistes ont été progressivement effacées de l’histoire. Pourtant, certaines sont parvenues jusqu’à nous malgré ces obstacles. Ce jeu rend hommage aux tours de force qu’elles ont dû exécuter afin de pouvoir apprendre, créer, exister.
                     </p>
                 </div>
                 <div className="lejeu-content__artists">
