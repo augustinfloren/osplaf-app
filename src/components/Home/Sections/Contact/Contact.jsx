@@ -2,7 +2,7 @@ import PlaySlider from '../../Sliders/PlaySlider';
 import arrow3 from '../../../../assets/icons/osplaf-arrow3.png';
 import arrow4 from '../../../../assets/icons/osplaf-arrow4.png';
 import portrait from '../../../../assets/portrait.png';
-import { fb, insta, ulule } from '../../../../assets/index';
+import { fb, insta, ulule, tiktok } from '../../../../assets/index';
 
 import ContactForm from "./ContactForm";
 import './Contact.scss'
@@ -32,14 +32,17 @@ function Contact() {
                 </div>
 
                 <div className="contact-content__network-icons">
-                    <a href="">
+                    <a href="https://www.facebook.com/profile.php?id=61580032438250" target="_blank">
                         <img src={fb} alt="icône facebook" />
                     </a>
-                    <a href="">
-                        <img src={insta} alt="icône facebook" />
+                    <a href="https://www.instagram.com/ou_sont_les_artistes_femmes/?hl=fr" target="_blank">
+                        <img src={insta} alt="icône instagram" />
                     </a>
-                    <a href="">
-                        <img src={ulule} alt="icône facebook" />
+                    <a href="https://www.tiktok.com/search?q=les_artistes_femmes&t=1758986609132" target="_blank">
+                        <img src={tiktok} alt="icône tiktok" />
+                    </a>
+                    <a href="https://fr.ulule.com/lesartistesfemmes/" target="_blank">
+                        <img src={ulule} alt="icône ulule" />
                     </a>
                 </div>
             </div>
