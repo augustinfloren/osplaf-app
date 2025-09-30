@@ -12,6 +12,7 @@ export { default as logo2 } from './osplaf-logo-2.png';
 export { default as fb } from './icons/facebook-icon.png';
 export { default as insta } from './icons/instagram-icon.png';
 export { default as ulule } from './icons/ulule-icon.png';
+export { default as tiktok } from './icons/tiktok-icon.png';
 
 import hexa1 from './game-content/hexa/hexa1.png';
 import hexa2 from './game-content/hexa/hexa2.png';
