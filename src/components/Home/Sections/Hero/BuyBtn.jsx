@@ -66,10 +66,11 @@ function BuyBtn() {
             }}
             onClick={() => window.open("https://4232cb-95.myshopify.com/products/ou-sont-passees-les-artistes-femmes", "_blank")}
         >
-                Participer à la prévente
+                Acheter le jeu
         </motion.a>
     );
 }
 
 
 export default BuyBtn;
+
