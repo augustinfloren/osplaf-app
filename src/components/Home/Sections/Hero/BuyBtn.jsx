@@ -64,11 +64,12 @@ function BuyBtn() {
             whileTap={{ 
                 scale: [0.9, 1.2, 0.9], 
             }}
-            onClick={() => window.open("https://fr.ulule.com/lesartistesfemmes/", "_blank")}
+            onClick={() => window.open("https://4232cb-95.myshopify.com/products/ou-sont-passees-les-artistes-femmes", "_blank")}
         >
                 Participer à la prévente
         </motion.a>
     );
 }
+
 
 export default BuyBtn;
